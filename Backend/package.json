@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "build:watch": "tsc --build tsconfig.json --watch",
-    "start": "nodemon server.js"
+    "start": "nodemon js/server.js"
   },
   "author": "",
   "license": "ISC",

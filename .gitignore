@@ -1,7 +1,8 @@
 #dependencies
-node_modules
+Backend/node_modules
 
 #environment
-.env
+Backend/.env
 
-requests.http
+#js
+Backend/js

@@ -11,7 +11,7 @@ https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=searc
 
 3- Also you can run the db project locally but if you decide to use mongo atlas; you will need to register with that service, it's free :-) !!
 4- Config .env with the URI obtained from Mongo Atlas  
- 
+
 # Run
 1- Run command 'npm run build'
 2- Next run npm 'start'

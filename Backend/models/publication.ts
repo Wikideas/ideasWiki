@@ -1,20 +1,18 @@
 import monggose, { Schema, Document } from 'mongoose'
 
 export interface Publication extends Document {
-    id_Publication: string
+    num_Publication: string
     Date_Publication: Date
     Date_Ultime_Edit: Date
     Topic: string
     Category: string
     Detail: string
-    Comment: string
 }
 
 const publicationSchema = new Schema<Publication>({
-    id_Publication: {
+    num_Publication: {
         type: String,
-        unique: true,
-        required: true
+        unique: true
     },
     Date_Publication: {
         type: Date
@@ -33,10 +31,6 @@ const publicationSchema = new Schema<Publication>({
     Detail: {
         type: String,
         required: true
-    },
-    Comment: {
-        required: true,
-        type: String,
     }
 })
 

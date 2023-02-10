@@ -29,9 +29,9 @@ async function runConnection(): Promise<mongoose.Connection> {
 try {
     const resultConnection = runConnection()
     function delayedLogStatusConnection() {
-        resultConnection.then(data => console.log(data.readyState))
+        resultConnection.then(data => console.log("Conexion status", data.readyState))
     }
-    setTimeout(delayedLogStatusConnection, 7000);
+    setTimeout(delayedLogStatusConnection, 6000);
 } catch (error) {
     console.log(error)
 }

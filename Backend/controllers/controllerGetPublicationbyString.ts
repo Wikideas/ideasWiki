@@ -11,7 +11,12 @@ export const getPublicationByString = (req: Request, res: Response) => {
     Publication.find({ Topic: { $regex: `^${string}`, $options: 'i' } })
         .then(docs => {
             docs.map(doc => docNumTopic.push({ Topic: doc.Topic, NumDoc: doc.num_Publication }))
-            res.json(docNumTopic)
+            if (docNumTopic.length === 0) {
+                res.json({ docNumTopic, Res: "Sorry, we found nothing for that search" })
+            } else {
+                res.json(docNumTopic)
+            }
+
         })
         .catch(err => console.log(err))
 }

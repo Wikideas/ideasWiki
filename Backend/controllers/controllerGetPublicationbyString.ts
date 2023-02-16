@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import { Request, Response } from 'express';
 import Publication from "../models/publication";
 
 export const getPublicationByString = (req: Request, res: Response) => {
@@ -12,7 +12,7 @@ export const getPublicationByString = (req: Request, res: Response) => {
         .then(docs => {
             docs.map(doc => docNumTopic.push({ Topic: doc.Topic, NumDoc: doc.num_Publication }))
             if (docNumTopic.length === 0) {
-                res.json({ docNumTopic, Res: "Sorry, we found nothing for that search" })
+                res.json(docNumTopic)
             } else {
                 res.json(docNumTopic)
             }

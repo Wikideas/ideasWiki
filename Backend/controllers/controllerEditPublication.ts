@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import { TopologyDescriptionChangedEvent } from 'mongodb';
 import Publication from "../models/publication";
 
 export const editPublication = async (req: Request, res: Response) => {

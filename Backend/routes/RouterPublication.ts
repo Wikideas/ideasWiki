@@ -7,12 +7,14 @@ import { checking } from "../middlewares/checking";
 import { notFoundRoute } from "../controllers/controllerNotFoundRoute";
 import { getPublicationByString } from "../controllers/controllerGetPublicationbyString";
 import { getPublicationsbyNumDoc } from "../controllers/controllerGetPublicationsbyNumDoc";
+import { getPublicationsbyTopic } from "../controllers/controllerGetPublicationbyTopic";
 
 const router = express.Router()
 
 router.get("/getPublications", getPublications)
 router.get("/getPublication/:string", getPublicationByString)
 router.get("/getPublicationbyNumDoc/:num", getPublicationsbyNumDoc)
+router.get("/getPublicationbyTopic/:Topic", getPublicationsbyTopic)
 router.post("/createPublication", checking, createPublication)
 router.put("/editPublication/:id", checking, editPublication)
 router.get("", home)

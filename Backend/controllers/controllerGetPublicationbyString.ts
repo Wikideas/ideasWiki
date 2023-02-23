@@ -16,7 +16,6 @@ export const getPublicationByString = (req: Request, res: Response) => {
             } else {
                 res.json(docNumTopic)
             }
-
         })
         .catch(err => console.log(err))
 }

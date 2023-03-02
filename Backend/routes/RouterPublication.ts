@@ -8,10 +8,12 @@ import { notFoundRoute } from "../controllers/controllerNotFoundRoute";
 import { getPublicationByString } from "../controllers/controllerGetPublicationbyString";
 import { getPublicationsbyNumDoc } from "../controllers/controllerGetPublicationsbyNumDoc";
 import { getPublicationsbyTopic } from "../controllers/controllerGetPublicationbyTopic";
+import { getCategory } from "../controllers/controllerGetCategory";
 
 const router = express.Router()
 
 router.get("/getPublications", getPublications)
+router.get("/getCategories", getCategory)
 router.get("/getPublication/:string", getPublicationByString)
 router.get("/getPublicationbyNumDoc/:num", getPublicationsbyNumDoc)
 router.get("/getPublicationbyTopic/:Topic", getPublicationsbyTopic)

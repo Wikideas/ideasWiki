@@ -9,6 +9,7 @@ import { getPublicationByString } from "../controllers/controllerGetPublicationb
 import { getPublicationsbyNumDoc } from "../controllers/controllerGetPublicationsbyNumDoc";
 import { getPublicationsbyTopic } from "../controllers/controllerGetPublicationbyTopic";
 import { getCategory } from "../controllers/controllerGetCategory";
+import { getPublicationsbyCategory } from "../controllers/getPublicationsbyCategory"
 
 const router = express.Router()
 
@@ -17,6 +18,7 @@ router.get("/getCategory", getCategory)
 router.get("/getPublication/:string", getPublicationByString)
 router.get("/getPublicationbyNumDoc/:num", getPublicationsbyNumDoc)
 router.get("/getPublicationbyTopic/:Topic", getPublicationsbyTopic)
+router.get("/getPublicationbyCategory/:Category", getPublicationsbyCategory)
 router.post("/createPublication", checking, createPublication)
 router.put("/editPublication/:id", checking, editPublication)
 router.get("", home)

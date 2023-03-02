@@ -13,7 +13,7 @@ import { getCategory } from "../controllers/controllerGetCategory";
 const router = express.Router()
 
 router.get("/getPublications", getPublications)
-router.get("/getCategories", getCategory)
+router.get("/getCategory", getCategory)
 router.get("/getPublication/:string", getPublicationByString)
 router.get("/getPublicationbyNumDoc/:num", getPublicationsbyNumDoc)
 router.get("/getPublicationbyTopic/:Topic", getPublicationsbyTopic)

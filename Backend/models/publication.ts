@@ -1,3 +1,4 @@
+import mongoose from 'mongoose'
 import monggose, { Schema, Document } from 'mongoose'
 
 export interface Publication extends Document {
@@ -5,7 +6,7 @@ export interface Publication extends Document {
     Date_Publication: Date
     Date_Ultime_Edit: Date
     Topic: string
-    Category: string
+    Category: mongoose.Schema.Types.ObjectId
     Detail: string
 }
 
@@ -25,7 +26,8 @@ const publicationSchema = new Schema<Publication>({
         required: true
     },
     Category: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'categoryPublication',
         required: true
     },
     Detail: {

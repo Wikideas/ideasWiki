@@ -1,11 +1,14 @@
 import './App.css';
+import ArticulosRecientes from './components/ArticulosRecientes';
 
 function App() {
   return (
     <div>
-        Hola wiki Bandido
+        <ArticulosRecientes/>
     </div>
   );
 }
 
 export default App;
+
+

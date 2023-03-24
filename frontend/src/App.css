@@ -1,0 +1,59 @@
+/* Globales */
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  font-family: "Urbanist", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  /* background-color: var(--color-white); */
+}
+:root {  
+  --color-primario:  #CAFF42;
+  --color-secundario: #49708A;
+  --color-acento: #88ABC2;
+  --color-acento2: #D0E0EB;;
+  --color-white: #EBF7F8;
+  --color-black: #121212;
+  --color-black2: #141E25;
+  --color-error: #DB3A3A;
+  --color-success: #7BCD5F;
+  
+  --font-weight-extraBold: 800;
+  --font-weight-bold: 700;
+  --font-weight-semiBold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.3rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+/* Esto posteriormente debería eliminarse, cuando se hagan los correspondientes componentes y estilos */
+.comunidad, .sobreNosotros, .soporte, .configuracion, .CrearArticulo {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}

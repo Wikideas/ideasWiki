@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound';
 import BarraDeBusqueda from './components/BarraDeBusqueda';
 import Search from './pages/Search';
 import ArticulosRecientes from './components/ArticulosRecientes';
+import Carousel from './components/carousel'
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
             <Route exact path='/search' element={<Search />} />
           </Routes>
         </MediaQuery>
-
+         <Carousel></Carousel>
           <ArticulosRecientes/>
       </Router>
 

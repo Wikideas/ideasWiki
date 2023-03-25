@@ -1,4 +1,6 @@
 
+import React from 'react';
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import MediaQuery from 'react-responsive';
 import Navbar from './components/Navbar';
@@ -12,6 +14,7 @@ import NotFound from './pages/NotFound';
 import BarraDeBusqueda from './components/BarraDeBusqueda';
 import Search from './pages/Search';
 import ArticulosRecientes from './components/ArticulosRecientes';
+
 
 function App() {
   return (

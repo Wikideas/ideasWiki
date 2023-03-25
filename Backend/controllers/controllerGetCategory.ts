@@ -1,12 +1,13 @@
 import { Request, Response } from "express"
-
-const categorys = ["IA", "Estructuras de datos", "Frameworks y librerias", "Lenguajes de programación",
-    "Procesos de diseño y buenas prácticas en el diseño UX/UI", "Introducción a IT",
-    "Testing", "Metodologías Agiles",
-    "Desarrollo de video juegos", "Desing thinking"]
+import CategoryPublication from "../models/categoryPublication"
 
 export const getCategory = (req: Request, res: Response) => {
-    res.status(200).json({
-        Categorias: categorys
-    })
+    CategoryPublication.find()
+        .then((data) => {
+            res.status(200).json({
+                data
+            })
+        }).catch((error) => {
+            console.log(error)
+        })
 } 

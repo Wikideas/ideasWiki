@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import Publication from "../models/publication";
 
-export const getPublicationsbyCategory = (req: Request, res: Response) => {
-    const { Category } = req.params
+export const getPublicationsbyIdCategory = (req: Request, res: Response) => {
+    const { id } = req.params
     try {
-        Publication.find({ Category })
+        Publication.find({ Category: { $in: [id] } })
             .then(data => res.json(data))
             .catch(err => console.log(err))
     } catch (error) {

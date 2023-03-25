@@ -1,0 +1,65 @@
+.buttonStyle {
+    width: 7em;
+    height: auto;
+    padding: 0.5em;
+    border-radius: 7px;
+    background-color: #CAFF42;
+    text-decoration: none;
+    color: black;
+}
+
+
+/************************ My Queryes **************************/
+
+
+/*X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 460px) {
+}
+@media (max-width: 576px) {
+    .card1:first-child {
+       display: none;
+    }
+    .card1:last-child {
+       display: none;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .contenedorCards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    .contenedorCards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (max-width: 1400px) {
+    .contenedorCards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+}

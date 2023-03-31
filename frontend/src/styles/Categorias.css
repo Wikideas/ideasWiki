@@ -1,0 +1,61 @@
+.container-banner {
+  display: flex;
+  width: 100%;
+  height: 40vh;
+  top: 6.4rem;
+  background-color: var(--color-acento2);
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.container-banner h1 {
+  left: 165px;
+  font-family: 'Urbanist';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 4.8rem;
+  margin-left: 18rem;
+  padding: 1rem;
+}
+
+.categorias-container__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem auto;
+}
+.categorias-card {
+  display: grid;
+  grid-template-columns: 45.5rem 1fr;
+  grid-template-rows: 2fr 4fr;
+  align-items: center;
+  padding: 0px;
+  margin-bottom: 5rem;
+  gap: 2.4rem;
+  width: 111rem;
+  height: 22.4rem;
+  background-color: var(--color-acento2);
+}
+.categorias-card img {
+  grid-row: 1 / 3;
+  width: 45.5rem;
+  height: 22.4rem;;
+  margin-right: 2rem;
+}
+.categorias-card h2 {
+  grid-row: 1 / 2;
+  font-family: 'Urbanist';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.8rem;
+  line-height: 34px;
+}
+.categorias-card p {
+  grid-row: 2 / 3;
+  font-family: 'Urbanist';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import "../styles/carousel.css";
 import { motion } from "framer-motion";
 import axios from "axios";
@@ -7,6 +7,7 @@ const Carouseleq = () => {
   //Funcion para cambio de estado
   const [category, setCategory] = useState([""]);
   //console.log(category);
+
 
   //Funcion para llamar a la API
   useEffect(() => {
@@ -25,14 +26,61 @@ const Carouseleq = () => {
   }, []);
   console.log(category, "category"); //comprobar si trae el array del api
 
+  //Medidas para el carousel
+    const [width, setWidth] = useState({right:0, left:-770});
+ 
+  useEffect(() => {
+   const handleResize = () => {
+    const { innerWidth } = window;
+
+    if (innerWidth < 500 ) {
+      setWidth({right:0, left:-770});
+    }
+   else if (innerWidth < 600 ) {
+      setWidth({right:0, left:-599});
+    }
+   else if (innerWidth < 700 ) {
+      setWidth({right:0, left:-599});
+    }
+   else if (innerWidth < 800 ) {
+      setWidth({right:0, left:-387});
+    }
+   else if (innerWidth < 900 ) {
+      setWidth({right:0, left:-288});
+    }
+   else  if (innerWidth < 1000 ) {
+      setWidth({right:0, left:-185});
+    } 
+
+    else if (innerWidth < 1100) {
+      setWidth({right:0, left:-128});
+    }
+    else{
+      setWidth({right:0, left:-100});
+    }
+  } 
+
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('DOMContentLoaded', handleResize);
+   handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('DOMContentLoaded', handleResize);
+    }
+  }, [setWidth]);   
+
+
   return (
     <div className="contenedor-carousel">
-      <motion.div className="slider-container">
-        {/*div que contendra las propiedades y funcionalidades de motion*/}
+    <h3>Categorias</h3>
+      <motion.div className="slider_container" >{/*  ref={slider_container} */}
+        {/*div que contendra las propiedades y funcionalida
+        des de motion*/}
         <motion.div
           className="slider"
           drag="x"
-          dragConstraints={{ right: 0, left: -177 }}
+          dragConstraints={width} 
         >
           {/* contenedor div para las category */}
           {category.map((categorias) => {
@@ -59,3 +107,28 @@ const Carouseleq = () => {
 };
 
 export default Carouseleq;
+
+
+
+
+
+
+
+
+
+
+
+/*  const [width, setWidth] = useState(0);
+  const slider_container = useRef()
+ 
+  useEffect(() => {
+    if (slider_container.current) {
+      const newWidth = slider_container.current.scrollWidth - slider_container.current.offsetWidth 
+      console.log(newWidth + 'console')
+      setWidth(newWidth)
+    } 
+     setWidth(slider_container.current.scrollWidth - slider_container.current.offsetWidth)
+    const newWidth = slider_container.current.scrollWidth - slider_container.current.offsetWidth 
+    console.log(newWidth)
+    setWidth(newWidth) 
+  }, []); */

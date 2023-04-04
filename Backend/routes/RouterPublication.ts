@@ -11,10 +11,14 @@ import { getPublicationsbyTopic } from "../controllers/controllerGetPublicationb
 import { getCategory } from "../controllers/controllerGetCategory";
 import { getPublicationsbyIdCategory } from "../controllers/getPublicationsbyCategory"
 import { createCategory } from "../controllers/controllerCreateCategory";
+import { getLastPublication } from "../controllers/controllerGetLastPublication";
+import { getSuggestedPublications } from "../controllers/controllerGetSuggestedPublications";
 
 const router = express.Router()
 
 router.get("/getPublications", getPublications)
+router.get("/getLastPublication", getLastPublication)
+router.get("/getSuggestedPublications/:numSuggestedPublicationsIn", getSuggestedPublications)
 router.get("/getCategory", getCategory)
 router.post("/createCategory", createCategory)
 router.get("/getPublication/:string", getPublicationByString)

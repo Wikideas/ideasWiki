@@ -3,6 +3,7 @@ import MediaQuery from 'react-responsive';
 import BarraDeBusqueda from '../components/BarraDeBusqueda';
 import ArticulosRecientes from '../components/ArticulosRecientes';
 import Carousel from '../components/carousel'
+import Footer from '../components/Footer';
 
 
 
@@ -17,6 +18,7 @@ function Inicio() {
 
     <ArticulosRecientes/>
 
+    <Footer />
   </div>
   );
 }

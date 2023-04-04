@@ -5,16 +5,18 @@ footer {
   text-align: center;
   padding: 3.2rem 5.2rem;
   gap: 2.4rem;
-  background-color: var(--color-white);
-  height: 32rem; 
+  background-color: var(--color-secundario);
+  height: 30%; 
   width: 100%;
   bottom: 0px;
+  margin-top: 4rem;
 }
 
 .footer-logo {
   width: 13.7rem;
   height: 12.7rem;
   margin: 1.5rem;
+  padding: 2.2rem;
 }
 
 footer .footer-row1 {
@@ -45,20 +47,45 @@ footer .footer-row2 {
   justify-content: center;
 }
 
-footer h6 {
+footer h6, footer a {
   font-family: 'Urbanist';
   font-style: normal;
-  font-weight: 700;
   font-size: 1.6rem;
   line-height: 1.9rem;
+  color: var(--color-white);
+}
+footer h6{
+  font-weight: 700;
 }
 footer a {
-  font-family: 'Urbanist';
-  font-style: normal;
   font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
   text-decoration: none;
-  color: var(--color-black);
   padding: 0.5rem;
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+  footer {
+    grid-template-columns: 1fr;
+    padding: 3.2rem 0rem 3.2rem 0rem;
+  }
+  footer .footer-row1 {
+    display: flex;
+    flex-direction: column;
+  } 
+  footer .footer-row1 .footer-contacts{
+    margin-bottom: 2rem;
+  }
+  footer .footer-row1 .footer-help{
+    margin-bottom: 1rem;
+  }
+  .footer-logo {
+    width: 5.1rem;
+    margin: 1.5rem;
+    padding: .5rem;
+  }
+  footer h6, footer a {
+    font-size: 1rem;
+  }
+
 }

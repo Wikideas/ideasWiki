@@ -5,7 +5,7 @@ export const SidebarData = [
   {
     title: 'Crear Articulo',
     path: '/crearArticulo',
-    icons:<AiIcons.AiOutlinePlusCircle />,
+    icons:<AiIcons.AiOutlinePlusCircle color='#EBF7F8'/>,
     cName: 'nav-text_CrearArticulo'
   },
   {

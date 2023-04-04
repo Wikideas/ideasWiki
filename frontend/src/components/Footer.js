@@ -1,5 +1,5 @@
 import React from 'react';
-import imgLogo from '../styles/assets/Vector.svg';
+import imgLogo from '../styles/assets/LogoFooterWhite.svg';
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from "react-icons/fa";
 import { IconContext } from 'react-icons';
@@ -8,7 +8,7 @@ import '../styles/Footer.css'
 function Footer() {
   return (
     <footer>
-        <IconContext.Provider value={{ color: '#121212'}}>
+        <IconContext.Provider value={{ color: '#EBF7F8'}}>
           <div className='footer-row1'>
             <a href='/' className='footer-contenedor__logo'> 
               <img src={imgLogo} className='footer-logo' alt='logo_wikiIdeas'/> 

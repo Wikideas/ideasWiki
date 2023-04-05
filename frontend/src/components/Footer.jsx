@@ -33,7 +33,22 @@ function Footer() {
           </div>
         </IconContext.Provider>
       </footer>
-  )
+  );
 }
+
+const routes = [];
+routes.push({
+  to: '/soporte',
+  text: 'Soporte',
+});
+routes.push({
+  to: '/ayudas',
+  text: 'Ayudas',
+});
+routes.push({
+  to: '/politicasPrivacidad',
+  text: 'Políticas de privacidad',
+});
+
 
 export default Footer;

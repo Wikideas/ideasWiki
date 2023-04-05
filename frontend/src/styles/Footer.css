@@ -3,13 +3,13 @@ footer {
   grid-template-rows: repeat(2, auto);
   /* grid-template-columns: 1fr 1fr 1fr; */
   text-align: center;
-  padding: 3.2rem 5.2rem;
-  gap: 2.4rem;
-  background-color: var(--color-secundario);
+  bottom: 0px;
   height: 30%; 
   width: 100%;
-  bottom: 0px;
+  gap: 2.4rem;
+  padding: 3.2rem 5.2rem;
   margin-top: 4rem;
+  background-color: var(--color-secundario);
 }
 
 .footer-logo {

@@ -1,7 +1,12 @@
-import Spinner from 'react-bootstrap/Spinner';
+import React from 'react';
+import '../styles/Spinner.css';
 
-function SpinnerCircular() {
-  return <Spinner animation="border" />;
-}
+const Spinner = () => {
+  return (
+    <div className="spinner-container">
+      <div className="spinner"></div>
+    </div>
+  );
+};
 
-export default SpinnerCircular;
+export default Spinner;

@@ -33,7 +33,8 @@ function App() {
           <Route exact path='/ayudas' element={<Ayudas />} />
           <Route exact path='/politicasPrivacidad' element={<PoliticasPrivacidad />} />
 
-          <Route exact path='/categorias' element={<Categorias />} />
+          {/* <Route exact path='/categorias' element={<Categorias />} /> */}
+          <Route exact path='/categorias/:nameCategory/:_id' element={<Categorias />} />
           
           <Route path = '*' element={<NotFound/>}/>
         </Routes>

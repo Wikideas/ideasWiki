@@ -27,7 +27,7 @@
     align-items: center;
   }
   
-  .cont-item p {
+  .cont-item p, .cont-item a {
     text-align: center;
     pointer-events: none;
     align-items: center;
@@ -63,8 +63,10 @@
       background-color: #c1c0c0
   }
   
-  .contenedor-NoCarousel p {
+  .contenedor-NoCarousel p, .contenedor-NoCarousel a {
     font-size: 30px;
+    color: var(--color-black);
+    line-height: 50px;
   }
   
 

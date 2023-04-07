@@ -3,13 +3,13 @@ footer {
   grid-template-rows: repeat(2, auto);
   /* grid-template-columns: 1fr 1fr 1fr; */
   text-align: center;
-  padding: 3.2rem 5.2rem;
-  gap: 2.4rem;
-  background-color: var(--color-secundario);
+  bottom: 0px;
   height: 30%; 
   width: 100%;
-  bottom: 0px;
+  gap: 2.4rem;
+  padding: 3.2rem 5.2rem;
   margin-top: 4rem;
+  background-color: var(--color-secundario);
 }
 
 .footer-logo {
@@ -47,7 +47,7 @@ footer .footer-row2 {
   justify-content: center;
 }
 
-footer h6, footer a {
+footer h6, footer Link, a {
   font-family: 'Urbanist';
   font-style: normal;
   font-size: 1.6rem;
@@ -57,10 +57,13 @@ footer h6, footer a {
 footer h6{
   font-weight: 700;
 }
-footer a {
+div Link, a {
   font-weight: 500;
   text-decoration: none;
   padding: 0.5rem;
+}
+:hover Link, a {
+  cursor: pointer;
 }
 
 /* Mobile */

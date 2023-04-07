@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import imgLogo from '../styles/assets/LogoFooterWhite.svg';
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from "react-icons/fa";
@@ -10,30 +11,31 @@ function Footer() {
     <footer>
         <IconContext.Provider value={{ color: '#EBF7F8'}}>
           <div className='footer-row1'>
-            <a href='/' className='footer-contenedor__logo'> 
+            <Link to='/' className='footer-contenedor__logo'> 
               <img src={imgLogo} className='footer-logo' alt='logo_wikiIdeas'/> 
-            </a>
+            </Link>
             <div className='footer-contacts'>
               <h6 className='footer-contacts--title'>Contacto</h6>
-              <a href="/" target="_blank"><AiIcons.AiOutlineMail />  ********@gmail.com</a>
-              <a href="/" target="_blank"><AiIcons.AiOutlineInstagram />  Instagram ****</a>
-              <a href="/" target="_blank"><FaIcons.FaLinkedin />  Linkedin *****</a>
+              <Link to="/" target="_blank"><AiIcons.AiOutlineMail />  ********@gmail.com</Link>
+              <Link to="/" target="_blank"><AiIcons.AiOutlineInstagram />  Instagram ****</Link>
+              <Link to="/" target="_blank"><FaIcons.FaLinkedin />  Linkedin *****</Link>
             </div>
             <div className='footer-help'>
               <h6 className='footer-help--title'>Centro de ayuda</h6>
-              <a href="/" target="_blank">Soporte</a>
-              <a href="/" target="_blank">Ayudas</a>
-              <a href="/" target="_blank">Políticas de privacidad</a>
+              <Link to='/soporte' >Soporte</Link>
+              <Link to='/ayudas' >Ayudas</Link>
+              <Link to='/politicasPrivacidad' >Políticas de privacidad</Link>
             </div>
           </div>
           <div className='footer-row2'>
-            <a href="/" target="_blank">Todos los derechos reservados.</a>
-            <a href="/" target="_blank">Términos y condiciones</a>
-            <a href="/" target="_blank">Aviso de privacidad</a>
+            <Link to="/" target="_blank">Todos los derechos reservados.</Link>
+            <Link to="/" target="_blank">Términos y condiciones</Link>
+            <Link to="/" target="_blank">Aviso de privacidad</Link>
           </div>
         </IconContext.Provider>
       </footer>
-  )
+  );
 }
+
 
 export default Footer;

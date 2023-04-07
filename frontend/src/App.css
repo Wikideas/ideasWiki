@@ -52,8 +52,10 @@ h6 {
 /* Esto posteriormente debería eliminarse, cuando se hagan los correspondientes componentes y estilos */
 .comunidad, .sobreNosotros, .soporte, .configuracion, .CrearArticulo {
   display: flex;
-  height: 90vh;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
 }
+
+

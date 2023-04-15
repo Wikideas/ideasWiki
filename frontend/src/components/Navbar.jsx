@@ -7,7 +7,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import imgLogo from '../styles/assets/Vector.svg';
 import '../styles/Navbar.css';
-import BarraDeBusqueda from '../components/BarraDeBusqueda';
+import BarraDeBusqueda from './BarraDeBusqueda';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -46,11 +46,11 @@ function Navbar() {
         </MediaQuery>
         
         {/* Logo */}
-        <a href='/'> 
+        <Link to='/'> 
           <img src={imgLogo}
             className='nav__logo' 
             alt='logo_wikiIdeas'/> 
-        </a>
+        </Link>
 
         {/* Search Mobile */}
         <MediaQuery maxDeviceWidth={768}>

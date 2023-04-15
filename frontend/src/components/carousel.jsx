@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import "../styles/carousel.css";
 import { motion } from "framer-motion";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Carouseleq = () => {
   //Funcion para cambio de estado
@@ -97,7 +98,8 @@ const Carouseleq = () => {
         {category.map((categorias) => {
           return (
             <div className="item">
-              <p key={category._id}>{categorias.nameCategory}</p>
+              <Link to={`/categorias/${categorias.nameCategory}/${categorias._id}`} key={category._id}  >{categorias.nameCategory}</Link>
+              {/* <p key={category._id}>{categorias.nameCategory}</p> */}
             </div>
           );
         })}

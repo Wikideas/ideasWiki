@@ -1,8 +1,7 @@
 
 import React from 'react';
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import MediaQuery from 'react-responsive';
+import { HashRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Inicio from './pages/Inicio';
 import CrearArticulo from './pages/CrearArticulo';
@@ -14,52 +13,35 @@ import NotFound from './pages/NotFound';
 import Articulo from './pages/Articulo';
 import BarraDeBusqueda from './components/BarraDeBusqueda';
 import Search from './pages/Search';
-import ArticulosRecientes from './components/ArticulosRecientes';
-import Carousel from './components/carousel'
+import Categorias from './pages/Categorias';
+import Ayudas from './pages/Ayudas';
+import PoliticasPrivacidad from './pages/PoliticasPrivacidad';
 
 
 
 function App() {
   return (
     <>
-      <Router>
-          <Navbar />  
+      <HashRouter>
+        <Navbar />
+
         <Routes>
-          <Route exact path='/crearArticulo' element={<CrearArticulo />} />
           <Route exact path='/' element={<Inicio />} />
+          <Route exact path='/crearArticulo' element={<CrearArticulo />} />
           <Route exact path='/comunidad' element={<Comunidad />} />
           <Route exact path='/sobreNosotros' element={<SobreNosotros />} />
           <Route exact path='/soporte' element={<Soporte />} />
           <Route exact path='/configuracion' element={<Configuracion />} />
           <Route exact path='/articulo' element={<Articulo/>} /> 
+          <Route exact path='/search' element={<Search />} />
+          <Route exact path='/ayudas' element={<Ayudas />} />
+          <Route exact path='/politicasPrivacidad' element={<PoliticasPrivacidad />} />
+          {/* <Route exact path='/categorias' element={<Categorias />} /> */}
+          <Route exact path='/categorias/:nameCategory/:_id' element={<Categorias />} />
           <Route path = '*' element={<NotFound/>}/>
         </Routes>   
 
-        {window.location.pathname === "/" && (
-          <>
-
-          <MediaQuery maxDeviceWidth={768}>
-          <BarraDeBusqueda />
-          <Routes>
-            <Route exact path='/search' element={<Search />} />
-          </Routes>
-        </MediaQuery>
-          <Carousel></Carousel>
-          <ArticulosRecientes/>
-          </>
-        ) }  
-     
-        {window.location.pathname === "/articulo" && (
-          <>
-          </>
-        )}
-
-   
-
-
-
-      </Router>
-
+      </HashRouter>
     </>
   );
 }

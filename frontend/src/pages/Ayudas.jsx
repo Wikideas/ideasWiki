@@ -1,14 +1,14 @@
 import React from 'react';
 import Footer from '../components/Footer';
 
-function Soporte() {
+function Ayudas() {
   return (
-    <div className='soporte'>
-      <h1>Soporte</h1>
+    <div className='Ayudas'>
+      <h1>Ayudas</h1>
 
       <Footer />
     </div>
   );
 }
 
-export default Soporte;
+export default Ayudas;

@@ -11,7 +11,7 @@ import SobreNosotros from './pages/SobreNosotros';
 import Soporte from './pages/Soporte';
 import Configuracion from './pages/Configuracion';
 import NotFound from './pages/NotFound';
-import Articulo from './pages/articulo';
+import Articulo from './pages/Articulo';
 import BarraDeBusqueda from './components/BarraDeBusqueda';
 import Search from './pages/Search';
 import ArticulosRecientes from './components/ArticulosRecientes';
@@ -31,7 +31,7 @@ function App() {
           <Route exact path='/sobreNosotros' element={<SobreNosotros />} />
           <Route exact path='/soporte' element={<Soporte />} />
           <Route exact path='/configuracion' element={<Configuracion />} />
-          <Route exact path='/articulo' element={<Articulo />} /> 
+          <Route exact path='/articulo' element={<Articulo/>} /> 
           <Route path = '*' element={<NotFound/>}/>
         </Routes>   
 

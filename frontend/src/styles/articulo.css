@@ -1,0 +1,347 @@
+/* 
+                      SPINNER
+*/
+
+.css-k008qs{
+    margin-top: 50%;
+    justify-content: space-evenly;
+ }
+
+
+
+/* 
+                      CUERPO 1
+*/
+
+* {
+    font-size: 1.7rem;
+}
+
+ html{
+    overflow-x: hidden;
+}  
+
+.cuerpo1 .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* .cuerpo1 .row  .tituloArticulo{
+     flex: 1 1 29rem;
+} 
+
+.cuerpo1 .row  .detalleArticulo{
+    flex: 1 1 29rem;
+} */
+
+
+.tituloArticulo {
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    background: #AAA9A9;
+}
+
+
+.tituloArticulo h2{
+    color: #FAFAFA;
+    font-size: 2rem;
+}
+
+.iconos{
+    background: #AAA9A9;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px; 
+    align-items: center;
+}
+
+.iconos img{
+    width: 30px;
+}
+
+.iconos div{
+    width: 30px;
+    padding-right: 42px;  
+}
+
+.iconos i{
+    color: #FAFAFA;
+    width: 20px;
+    padding-left: 20px;
+}
+
+ .detalleArticulo{
+    padding-top: 20px; 
+} 
+
+.detalleArticulo p {
+     padding-left: 20px;
+    padding-right: 20px;  
+    text-align: justify;
+}  
+
+/* 
+                      CUERPO 2
+*/
+
+.cuerpo2{
+    margin-top: 30px;
+    
+}
+
+ .imagenArticulo{
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+.imagenArticulo div{
+ width: 300px;
+}
+
+.imagenArticulo img{
+    width: 100%;
+}
+
+.detalle1{
+    padding-top: 30px;
+}
+
+.detalle1 h4{
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px; 
+    font-size: 18px;
+    text-align: justify;
+}
+
+.detalle1 p{
+    padding-left: 20px;
+    padding-right: 20px; 
+    text-align: justify;
+}
+
+/* 
+                      CUERPO 3
+*/
+
+.cuerpo3{
+    margin-top: 30px;
+}
+
+
+.imagenCuerpo3 div{
+    width: 189px;
+}
+
+.imagenCuerpo3 img{
+    width: 100%;
+}
+
+.cuerpo3 .row  .imagenCuerpo3{
+    flex: 1 1 7rem;
+    padding-right: 0px;
+} 
+
+.cuerpo3 .row  .detalleCuerpo3{
+    flex: 1 1 7rem;
+}
+
+.cuerpo3 .imagenCuerpo3 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cuerpo3 .detalleCuerpo3 {
+    padding-right: 20px;
+}
+
+.cuerpo3 .detalleCuerpo3 p {
+    text-align: justify;
+    
+}
+
+.parrafoMobile2{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;  
+    text-align: justify;
+}
+
+/* .detalleArticulo{
+    padding-top: 20px; 
+} 
+
+.detalleArticulo p {
+     padding-left: 20px;
+    padding-right: 20px;  
+    text-align: justify;
+}  */
+
+.cuerpo3 .detalleCuerpo3 .parrafoDesktop{
+    display: none;
+}
+
+ .cuerpo3 .detalleCuerpo3 h4{
+        padding-bottom: 10px;
+        font-size: 18px;
+} 
+
+
+/* 
+                      CUERPO 4
+*/
+
+
+.cuerpo4{
+    margin-top: 30px;
+}
+
+.cuerpo4 .parrafoDesktop{
+    display: none;
+}
+
+
+.imagenCuerpo4 div{
+    width: 189px;
+}
+
+.imagenCuerpo4 img{
+    width: 100%;
+}
+
+.cuerpo4 .row  .imagenCuerpo4{
+    flex: 1 1 7rem;
+    padding-right: 20px;
+} 
+
+.cuerpo4 .row  .detalleCuerpo4{
+    flex: 1 1 18rem;
+    padding-left: 20px;
+}
+
+
+
+.cuerpo4 .detalleCuerpo4 h4{
+    padding-bottom: 10px;
+    font-size: 18px;
+} 
+
+
+.cuerpo4 .imagenCuerpo4 img{
+    display: flex;
+}
+
+.cuerpo4 .detalleCuerpo4 {
+    padding-left: 20px;
+}
+
+.cuerpo4 .detalleCuerpo4 p {
+    text-align: justify;
+    
+}
+
+.parrafoMobile4{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;  
+    text-align: justify;
+}
+
+/* 
+                      CUERPO 5
+*/
+
+.cuerpo5{
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cuerpo5 h4{
+    padding-bottom: 20px; 
+    font-size: 18px;
+   
+}
+
+.cuerpo5 p{
+    text-align: justify;
+}
+
+/* 
+                      CUERPO 6
+*/
+
+.cuerpo6{
+    margin-top: 30px;
+    padding-right: 20px; 
+    padding-left: 20px;
+}
+
+ .cuerpo6 .parrafoDesktop6{
+    display: none;
+    text-align: justify;
+} 
+
+
+.imagenCuerpo6 div{
+    width: 189px;
+}
+
+.imagenCuerpo6 img{
+    width: 100%;
+}
+
+.cuerpo6 .row  .imagenCuerpo6{
+    flex: 1 1 7rem;
+    /* padding-right: 20px; */
+} 
+
+.cuerpo6 .row  .detalleCuerpo6{
+    flex: 1 1 15rem;
+/*     padding-left: 20px; */
+}
+
+.cuerpo6 h4{
+    padding-bottom: 20px;
+    /* padding-left: 20px; */
+    padding-right: 20px; 
+    font-size: 18px;  
+}
+
+/* 
+                      CUERPO 7
+*/
+
+.cuerpo7{
+    margin-top: 30px;
+    padding-right: 20px; 
+    padding-left: 20px;
+}
+
+.cuerpo7 p{
+    text-align: justify;
+}
+
+
+/* 
+                      CARD
+*/
+
+.temas{
+    display: none;
+}
+
+
+
+/* .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 2fr));
+    gap: 9.10rem; 
+}
+
+.box-container .contImagen{
+    width: 316px;
+} */

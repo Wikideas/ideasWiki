@@ -11,7 +11,6 @@ import Soporte from './pages/Soporte';
 import Configuracion from './pages/Configuracion';
 import NotFound from './pages/NotFound';
 import Articulo from './pages/Articulo';
-import BarraDeBusqueda from './components/BarraDeBusqueda';
 import Search from './pages/Search';
 import Categorias from './pages/Categorias';
 import Ayudas from './pages/Ayudas';

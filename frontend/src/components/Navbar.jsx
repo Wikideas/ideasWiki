@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <>
     <IconContext.Provider value={{ color: '#121212'}}>
-      <div className='navbar'>
+      <div className='navbar' >
         {/* Mobile */}
         <MediaQuery maxDeviceWidth={768}>
           <Link to='#' className='link nav__menu--burger'>

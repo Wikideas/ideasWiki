@@ -6,11 +6,13 @@ import * as FaIcons from "react-icons/fa";
 import { IconContext } from 'react-icons';
 import '../styles/Footer.css'
 import Modal from './Modal';
+import { useTheme } from '../context/ThemeProvider';
 
 
 function Footer() {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState('');
+  const { theme } = useTheme();
 
   const handleButtonClick = (buttonName) => {
     let content;
@@ -26,7 +28,7 @@ function Footer() {
   };
 
   return (
-    <footer>
+    <footer style={{ backgroundColor: theme?.background, color: theme?.textColor }}>
         <IconContext.Provider value={{ color: '#EBF7F8'}}>
           <div className='footer-row1'>
             <Link to='/' className='footer-contenedor__logo'> 

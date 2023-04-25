@@ -8,8 +8,8 @@ footer {
   width: 100%;
   gap: 2.4rem;
   padding: 3.2rem 5.2rem;
-  margin-top: 4rem;
-  background-color: var(--color-secundario);
+  background-color: var(--color-white-base);
+  color: var(--color-black);
 }
 
 .footer-logo {
@@ -50,12 +50,11 @@ footer .footer-row2 {
   justify-content: center;
 }
 
-footer h6, footer Link, a, .openModalBtn {
+footer h6, footer Link, footer a, footer .openModalBtn, footer .footer-row2 p {
   font-family: 'Urbanist';
   font-style: normal;
   font-size: 1.6rem;
   line-height: 1.9rem;
-  color: var(--color-white);
 }
 footer h6{
   font-weight: 700;
@@ -73,13 +72,7 @@ footer .openModalBtn {
   background-color: transparent;
   cursor: pointer;
 }
-.footer-row2 p{
-  font-family: 'Urbanist';
-  font-style: normal;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-  color: var(--color-white);
-}
+
 
 /* Mobile */
 @media only screen and (max-width: 768px) {

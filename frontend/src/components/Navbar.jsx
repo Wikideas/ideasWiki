@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
+import { useTheme } from '../context/ThemeProvider';
 import MediaQuery from 'react-responsive';
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
@@ -11,13 +12,20 @@ import BarraDeBusqueda from './BarraDeBusqueda';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
+  const { theme } = useTheme();
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate('/crearArticulo');
+  }
+
   return (
     <>
-    <IconContext.Provider value={{ color: '#121212'}}>
-      <div className='navbar' >
+    <IconContext.Provider value={{ color: '#121212'}} id={theme}>
+      <div className='navbar' id={theme}>
         {/* Mobile */}
         <MediaQuery maxDeviceWidth={768}>
           <Link to='#' className='link nav__menu--burger'>
@@ -63,8 +71,8 @@ function Navbar() {
         <MediaQuery minDeviceWidth={768}>
           <div className='nav_container--rigth'>
             <BarraDeBusqueda />
-            <Link to="/crearArticulo" className="btnCrearArticulo">Crear artículo</Link>
-            <Link to="/sobreNosotros" className="btnSobreNosotros">Sobre Nosotros</Link>
+            <button className="btnCrearArticulo" onClick={handleClick}> Crear artículo </button>
+            <Link to="/sobreNosotros" className="btnSobreNosotros" >Sobre Nosotros</Link>
           </div>
         </MediaQuery>
 

@@ -30,6 +30,32 @@ html {
   --font-weight-regular: 400;
 }
 
+/* Variables de Tema oscuro/claro */
+#Dark{
+  background-color: var(--color-black2);
+  color: var(--color-white);
+}
+#Light{
+  background-color: var(--color-white-base);
+  color: var(--color-black);
+}
+#Dark Link, #Dark a {
+  color: var(--color-white);
+}
+#Light Link, #Light a{
+  color: var(--color-black);
+}
+#Dark button{
+  background-color: var(--color-primario);
+  color: var(--color-black2);
+}
+#Light button{
+  background-color: var(--color-black2);
+  color: var(--color-white);
+}
+
+
+
 h1 {
   font-size: 40px;
 }

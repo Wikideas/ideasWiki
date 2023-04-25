@@ -4,7 +4,8 @@
   align-items: center;
   align-content: center;
   height: 6.4rem;
-  background-color: var(--color-white);
+  background-color: var(--color-white-base);
+  color: var(--color-black);
 }
 
 /* Menu Mobile */
@@ -45,7 +46,6 @@
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: var(--font-weight-semiBold);
-  color: var(--color-black);
   width: 98%;
   height: 100%;
   display: flex;
@@ -54,7 +54,7 @@
   border-radius: 0.2rem;
 }
 .nav-text_CrearArticulo {
-  background-color: var(--color-black);
+  background-color: var(--color-black2);
   display: flex;
   flex-direction: row;
   align-items: center;

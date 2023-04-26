@@ -10,7 +10,7 @@
   align-items: center;
 }
 .modal-container {
-  background-color: #EBF7F8;
+  background-color: var(--color-acento);
   padding: 2rem;
   border-radius: .5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);

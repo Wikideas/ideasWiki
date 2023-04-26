@@ -53,6 +53,54 @@ html {
   background-color: var(--color-black2);
   color: var(--color-white);
 }
+#Dark .nav-text_CrearArticulo{
+  background-color: var(--color-primario);
+}
+#Light .nav-text_CrearArticulo{
+  background-color: var(--color-black2);
+}
+#Dark .nav-text_CrearArticulo a, #Dark .nav-text_CrearArticulo a svg{
+  color: var(--color-black2);
+}
+#Light .nav-text_CrearArticulo a, #Light .nav-text_CrearArticulo a svg{
+  color: var(--color-white);
+}
+#Dark .nav-menu {
+  background-color: var(--color-black2);
+  color: var(--color-white);
+}
+#Light .nav-menu {
+  background-color: var(--color-acento2);
+  color: var(--color-black);
+}
+#Dark .navbar-toggle {
+  background-color: var(--color-black2);
+  color: var(--color-white);
+}
+#Light .navbar-toggle {
+  background-color: var(--color-acento2);
+  color: var(--color-black);
+}
+#Dark .form-control{
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+#Light .form-control{
+  background-color: var(--color-acento2);
+  color: var(--color-secundario);
+}
+#Dark .nav__logo{
+  background-image: url(./styles/assets/Vector2.svg);
+}
+#Light .nav__logo{
+  background-image: url(./styles/assets/Vector.svg);
+}
+#Dark .footer-logo{
+  background-image: url(./styles/assets/LogoFooterWhite.svg);
+}
+#Light .footer-logo{
+  background-image: url(./styles/assets/LogoFooterBlack.svg);
+}
 
 
 

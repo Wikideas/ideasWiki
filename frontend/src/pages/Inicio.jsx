@@ -5,6 +5,7 @@ import BarraDeBusqueda from '../components/BarraDeBusqueda';
 import ArticulosRecientes from '../components/ArticulosRecientes';
 import Carousel from '../components/carousel'
 import Footer from '../components/Footer';
+import ArticulosPopulares from '../components/ArticulosPopulares';
 
 
 function Inicio() {
@@ -27,11 +28,9 @@ function Inicio() {
       <MediaQuery maxDeviceWidth={768}>
         <BarraDeBusqueda />
       </MediaQuery>
-
       <Carousel />
-
       <ArticulosRecientes/>
-
+      <ArticulosPopulares/>
       <Footer />
     </div>
     )}
@@ -40,3 +39,5 @@ function Inicio() {
 }
 
 export default Inicio;
+
+

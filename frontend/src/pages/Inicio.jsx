@@ -5,6 +5,7 @@ import MediaQuery from 'react-responsive';
 import BarraDeBusqueda from '../components/BarraDeBusqueda';
 import ArticulosRecientes from '../components/ArticulosRecientes';
 import Carousel from '../components/carousel'
+import ArticulosPopulares from '../components/ArticulosPopulares';
 import "../styles/Inicio.css";
 
 
@@ -44,9 +45,8 @@ function Inicio() {
       </MediaQuery>
 
       <Carousel />
-
       <ArticulosRecientes/>
-
+      <ArticulosPopulares/>
     </div>
     )}
   </>
@@ -54,3 +54,5 @@ function Inicio() {
 }
 
 export default Inicio;
+
+

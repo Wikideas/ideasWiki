@@ -77,6 +77,9 @@
   */
 
 
+/* Jotop: Acordarme de ver esto con la compi, 
+si lo comento el carosuel mio se ve en pantallas grandes
+pero no en version movil */
 
   @media (min-width: 1059px) {
     .slider_container{

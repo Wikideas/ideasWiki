@@ -1,8 +1,0 @@
-#dependencies
-Backend/node_modules
-
-#environment
-Backend/.env
-
-#js
-Backend/js

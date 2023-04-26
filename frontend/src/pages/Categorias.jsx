@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios";
 import '../styles/Categorias.css';
-import Footer from '../components/Footer';
 import { useParams } from 'react-router-dom';
 
 function Categorias() {
@@ -45,30 +44,8 @@ function Categorias() {
       ))}
     </div>
 
-      {/* Aquí se renderiza el footer */}
-      <Footer />
     </>
   );
 }
 
 export default Categorias;
-
-
-// function Categorias() {
-//   const [categoria, setCategoria] = useState('');
-//   const [productos, setProductos] = useState([]);
-
-//   useEffect(() => {
-//     // Aquí se realizan las consultas a ambas APIs en paralelo
-//     Promise.all([
-//       axios.get('https://api.escuelajs.co/api/v1/categories'),
-//       axios.get('https://api.escuelajs.co/api/v1/categories')
-//     ])
-//       .then(response => {
-//         setCategoria(response[0].data.nombre);
-//         setProductos(response[1].data);
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       });
-//   }, []);

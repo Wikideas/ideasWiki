@@ -66,7 +66,7 @@ const Carouseleq = () => {
    handleResize();
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResize); /* probar con prevent default */
       window.removeEventListener('DOMContentLoaded', handleResize);
     }
   }, [setWidth]);   

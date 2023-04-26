@@ -5,12 +5,8 @@ import MediaQuery from 'react-responsive';
 import BarraDeBusqueda from '../components/BarraDeBusqueda';
 import ArticulosRecientes from '../components/ArticulosRecientes';
 import Carousel from '../components/carousel'
-<<<<<<< HEAD
-import Footer from '../components/Footer';
 import ArticulosPopulares from '../components/ArticulosPopulares';
-=======
 import "../styles/Inicio.css";
->>>>>>> v1.0.0
 
 
 function Inicio() {
@@ -34,8 +30,6 @@ function Inicio() {
       <MediaQuery maxDeviceWidth={768}>
         <BarraDeBusqueda />
       </MediaQuery>
-<<<<<<< HEAD
-=======
 
       <MediaQuery minDeviceWidth={768}>
         <div className='container-banner_inicio'>
@@ -50,15 +44,9 @@ function Inicio() {
         </div>
       </MediaQuery>
 
->>>>>>> v1.0.0
       <Carousel />
       <ArticulosRecientes/>
-<<<<<<< HEAD
       <ArticulosPopulares/>
-      <Footer />
-=======
-
->>>>>>> v1.0.0
     </div>
     )}
   </>

@@ -1,0 +1,23 @@
+.container-banner_inicio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-content: center;
+  width: 100%;
+  height: 60vh;
+  top: 6.4rem;
+  padding: 0rem 5.2rem;
+  gap: 2.3rem;
+  background: var(--color-black2);
+  color: var(--color-white);
+}
+.banner-text {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 50%;
+  width: 90%;
+}
+.banner-text h1 {
+  margin-bottom: 3rem;
+}

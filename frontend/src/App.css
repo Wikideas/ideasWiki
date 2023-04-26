@@ -10,7 +10,6 @@
 }
 html {
   font-size: 62.5%;
-  /* background-color: var(--color-white); */
 }
 :root {  
   --color-primario:  #CAFF42;
@@ -18,6 +17,7 @@ html {
   --color-acento: #88ABC2;
   --color-acento2: #D0E0EB;;
   --color-white: #EBF7F8;
+  --color-white-base: #f5f7f8;
   --color-black: #121212;
   --color-black2: #141E25;
   --color-error: #DB3A3A;
@@ -30,24 +30,99 @@ html {
   --font-weight-regular: 400;
 }
 
+/* Variables de Tema oscuro/claro */
+#Dark{
+  background-color: var(--color-black2);
+  color: var(--color-white);
+}
+#Light{
+  background-color: var(--color-white-base);
+  color: var(--color-black);
+}
+#Dark Link, #Dark a {
+  color: var(--color-white);
+}
+#Light Link, #Light a{
+  color: var(--color-black);
+}
+#Dark button{
+  background-color: var(--color-primario);
+  color: var(--color-black2);
+}
+#Light button{
+  background-color: var(--color-black2);
+  color: var(--color-white);
+}
+#Dark .nav-text_CrearArticulo{
+  background-color: var(--color-primario);
+}
+#Light .nav-text_CrearArticulo{
+  background-color: var(--color-black2);
+}
+#Dark .nav-text_CrearArticulo a, #Dark .nav-text_CrearArticulo a svg{
+  color: var(--color-black2);
+}
+#Light .nav-text_CrearArticulo a, #Light .nav-text_CrearArticulo a svg{
+  color: var(--color-white);
+}
+#Dark .nav-menu {
+  background-color: var(--color-black2);
+  color: var(--color-white);
+}
+#Light .nav-menu {
+  background-color: var(--color-acento2);
+  color: var(--color-black);
+}
+#Dark .navbar-toggle {
+  background-color: var(--color-black2);
+  color: var(--color-white);
+}
+#Light .navbar-toggle {
+  background-color: var(--color-acento2);
+  color: var(--color-black);
+}
+#Dark .form-control{
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+#Light .form-control{
+  background-color: var(--color-acento2);
+  color: var(--color-secundario);
+}
+#Dark .nav__logo{
+  background-image: url(./styles/assets/Vector2.svg);
+}
+#Light .nav__logo{
+  background-image: url(./styles/assets/Vector.svg);
+}
+#Dark .footer-logo{
+  background-image: url(./styles/assets/LogoFooterWhite.svg);
+}
+#Light .footer-logo{
+  background-image: url(./styles/assets/LogoFooterBlack.svg);
+}
+
+
+
 h1 {
-  font-size: 3rem;
+  font-size: 40px;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 32px;
 }
 h3 {
-  font-size: 1.8rem;
+  font-size: 28px;
 }
 h4 {
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 h5 {
-  font-size: 1.3rem;
+  font-size: 20px;
 }
 h6 {
-  font-size: 1rem;
+  font-size: 16px;
 }
+
 
 /* Esto posteriormente debería eliminarse, cuando se hagan los correspondientes componentes y estilos */
 .comunidad, .sobreNosotros, .soporte, .configuracion, .CrearArticulo {

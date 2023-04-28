@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 <CircularProgress />
 </Box>  */}
 
-function Articulo() {
+function Articulos() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -294,4 +294,4 @@ function Articulo() {
   );
 }
 
-export default Articulo;
+export default Articulos;

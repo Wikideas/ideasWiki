@@ -4,7 +4,7 @@ import '../styles/Categorias.css';
 import { useParams } from 'react-router-dom';
 
 function Categorias() {
-  const { nameCategory, _id } = useParams();
+   const { nameCategory, _id } = useParams();
 
   const [cardCategory, setCardCategory] = useState([""]);
   //console.log(category);
@@ -24,17 +24,18 @@ function Categorias() {
     };
     obtenerCardCategory();
   }, [_id]);
-  
+   
 
   return (
     <>
+   
       {/* Aquí se renderiza el banner */}
       <div className='container-banner'>
         <h1>Categoria: {nameCategory} </h1>
-      </div>
+      </div> 
 
       {/* Aquí se renderizan las cards horizontales */}
-    <div className='categorias-container__cards'>
+     <div className='categorias-container__cards'>
       {cardCategory.map(card => (
         <div className='categorias-card' key={card._id}>
           <img src={card.imagen} alt={card.Topic} />
@@ -42,7 +43,7 @@ function Categorias() {
           <p>Descripción: {card.Detail}</p>
         </div>
       ))}
-    </div>
+    </div> 
 
     </>
   );

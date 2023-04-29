@@ -10,7 +10,7 @@ const ArticulosPopulares = () => {
   useEffect(() => {
     const obtenerDatos = async () => {
       const url =
-        "https://serviceone.onrender.com/apiWikiIdeasV1d/getSuggestedPublications/10";
+        "https://serviceone.onrender.com/apiWikiIdeasV1d/getSuggestedPublications/15";
       const result = await axios.get(url).catch((error) => {
         console.log(error);
       });
@@ -60,29 +60,32 @@ const ArticulosPopulares = () => {
   }, [setWidth]);
 
   return (
-    <div className="container pt-3">
+    <div className="container pt-3"> {/* Container Global */}
       <h2>Artículos Populares</h2>
-      <motion.div className="slider_container">
-        <motion.div className="slider" drag="x" dragConstraints={width}>
+      <motion.div className="slider_container1"> {/* Contiene el Carousel */}
+        <motion.div className="slider1 " drag="x" dragConstraints={width}>
 
           {data.map((data) => (
-            <motion.div className="cont-item1"> {/* Afecta estilos de cada card */}
-              <div className="card card1" style={{ width: "25rem;" }}>
+            <motion.div className="cardContainer" > {/* Estilos de cada Card*/}
+                {/* Imagen */}
                 <img
+                  className="cardImg"
                   src={require("../styles/assets/testimonio-diwght.jpeg")}
-                  className="card-img-top"
                   alt="Articulos recientes"
+                  
                 />
-                <div class="card-body">
-                  <h5 class="card-title">{data.Topic}</h5>
+                {/* Contenido */}
+                <div class="ContentDiv pt-3">
+                  <h5 className='ms-2'>{data.Topic}</h5>
                   <p class="card-text"> {/* {data.Detail} */}</p> {/* Hay que definir la cantidad de caranteres que lleva cada descripcion */}
-                  <Link to={`/categorias/${data.nameCategory}/${data._id}`} key={data._id}  >{data.nameCategory}
-                  <div className="text-end pt-2">
-                    <a href="#" className="buttonStyle1">Ver más</a>
-                  </div>
-                  </Link>
                 </div>
-              </div>
+                
+                {/* Boton */}
+                  <div className="buttonContainer p-3">
+                    <Link to={`/categorias/${data.nameCategory}/${data._id}`} key={data._id}  >{data.nameCategory}
+                    <a href="#" className="buttonStyle1">Ver más</a>
+                    </Link>
+                  </div>
             </motion.div>
           ))}
           

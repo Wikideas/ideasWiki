@@ -75,15 +75,15 @@ const ArticulosPopulares = () => {
                   
                 />
                 {/* Contenido */}
-                <div class="ContentDiv pt-3">
+                <div className="ContentDiv pt-3">
                   <h5 className='ms-2'>{data.Topic}</h5>
-                  <p class="card-text"> {/* {data.Detail} */}</p> {/* Hay que definir la cantidad de caranteres que lleva cada descripcion */}
+                  <p className="card-text"> {/* {data.Detail} */}</p> {/* Hay que definir la cantidad de caranteres que lleva cada descripcion */}
                 </div>
                 
                 {/* Boton */}
                   <div className="buttonContainer p-3">
-                    <Link to={`/categorias/${data.nameCategory}/${data._id}`} key={data._id}  >{data.nameCategory}
-                    <a href="#" className="buttonStyle1">Ver más</a>
+                    <Link to={`/categorias/${data.nameCategory}/${data._id}`} key={data._id} className="buttonStyle1"  >
+                      Ver más
                     </Link>
                   </div>
             </motion.div>

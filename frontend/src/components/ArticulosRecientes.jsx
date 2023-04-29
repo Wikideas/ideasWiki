@@ -8,15 +8,15 @@ const ArticulosRecientes = () => {
       <h2>Artículos recientes</h2>
 
       <div className="contenedorCards container">
-        <div className="card card1" style={{ width: "18rem;" }}>
+        <div className="card card1" style={{ width: "18rem" }}>
           <img
             src={require("../styles/assets/testimonio-diwght.jpeg")}
             className="card-img-top"
             alt="Articulos recientes"
           />
-          <div class="card-body">
-            <h5 class="card-title">Titulo</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title">Titulo</h5>
+            <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
@@ -28,15 +28,15 @@ const ArticulosRecientes = () => {
           </div>
         </div>
 
-        <div className="card card1" style={{ width: "18rem;" }}>
+        <div className="card card1" style={{ width: "18rem" }}>
           <img
             src={require("../styles/assets/testimonio-diwght.jpeg")}
             className="card-img-top"
             alt="Articulos recientes"
           />
-          <div class="card-body">
-            <h5 class="card-title">Titulo</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title">Titulo</h5>
+            <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
@@ -48,15 +48,15 @@ const ArticulosRecientes = () => {
           </div>
         </div>
 
-        <div className="card card1" style={{ width: "18rem;" }}>
+        <div className="card card1" style={{ width: "18rem" }}>
           <img
             src={require("../styles/assets/testimonio-diwght.jpeg")}
             className="card-img-top"
             alt="Articulos recientes"
           />
-          <div class="card-body">
-            <h5 class="card-title">Titulo</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title">Titulo</h5>
+            <p className="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>

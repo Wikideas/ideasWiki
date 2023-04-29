@@ -1,31 +1,20 @@
 import React, { useState, useEffect} from "react";
 import "../styles/carousel.css";
 import { motion } from "framer-motion";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import { useApiCategory } from "../hooks/useApiCategory";
+import LoaderDisenio from "../components/Loader/LoaderDisenio"; 
+import Loader from "../components/Loader/Loader"
 
 const Carouseleq = () => {
   //Funcion para cambio de estado
-  const [category, setCategory] = useState([""]);
+ /*  const [category, setCategory] = useState([""]);  */
   //console.log(category);
 
-
-  //Funcion para llamar a la API
-  useEffect(() => {
-    //llamado asincronico de la API
-    const obtenerCategory = async () => {
-      const url = "https://serviceone.onrender.com/apiWikiIdeasV1d/getCategory";
-      const result = await axios.get(url).catch((error) => {
-        console.log(error);
-      });
-
-      console.log(result.data.data[0].nameCategory);
-
-      setCategory(result.data.data);
-    };
-    obtenerCategory();
-  }, []);
-  console.log(category, "category"); //comprobar si trae el array del api
+ 
+  const { loading, data: category } = useApiCategory(`https://serviceone.onrender.com/apiWikiIdeasV1d/getCategory`)
+  console.log(loading)
+  console.log(category)
 
   //Medidas para el carousel
     const [width, setWidth] = useState({right:0, left:-770});
@@ -74,8 +63,13 @@ const Carouseleq = () => {
 
   return (
     <div className="contenedor-carousel">
-    <h3>Categorias</h3>
-      <motion.div className="slider_container" >{/*  ref={slider_container} */}
+      <h3>Categorias</h3>
+
+    {
+      loading ? (
+        <Loader cargando={LoaderDisenio}/>
+      ) : (
+        <motion.div className="slider_container" >{/*  ref={slider_container} */}
         {/*div que contendra las propiedades y funcionalida
         des de motion*/}
         <motion.div
@@ -93,6 +87,9 @@ const Carouseleq = () => {
           })}
         </motion.div>
       </motion.div>
+      )
+    }
+  
 
       <div className="contenedor-NoCarousel">
         {category.map((categorias) => {
@@ -111,7 +108,23 @@ const Carouseleq = () => {
 export default Carouseleq;
 
 
+/* 
+   //Funcion para llamar a la API
+  useEffect(() => {
+    //llamado asincronico de la API
+    const obtenerCategory = async () => {
+      const url = "https://serviceone.onrender.com/apiWikiIdeasV1d/getCategory";
+      const result = await axios.get(url).catch((error) => {
+        console.log(error);
+      });
 
+      console.log(result.data.data[0].nameCategory);
+
+      setCategory(result.data.data);
+    };
+    obtenerCategory();
+  }, []);
+  console.log(category, "category"); //comprobar si trae el array del api  */
 
 
 

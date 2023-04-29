@@ -17,7 +17,7 @@ function Inicio() {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false); 
-    }, 5000);
+    }, 0);
   }, []);
 
   return (

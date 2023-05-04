@@ -6,8 +6,8 @@ import bodyParser from 'body-parser';
 import cors from "cors";
 import mongoose from 'mongoose';
 
-import { DBConnection } from './db/DBConnection';
-import router from './routes/RouterPublication';
+import { DBConnection } from './src/db/DBConnection';
+import router from './src/routes/RouterPublication';
 
 //Mongoose config
 mongoose.set('strictQuery', true)

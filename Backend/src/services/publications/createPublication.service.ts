@@ -1,5 +1,5 @@
-import { numb } from '../utils/countDocs'
-import Publication from '../models/publication'
+import { numb } from '../../utils/countDocs'
+import Publication from '../../models/publication'
 const cloudinary = require('../config/cloudinary.config')
 
 
@@ -23,7 +23,6 @@ export const createPublicationService = async (Topic: String, Date_Publication: 
         id_Image: id_Image,
         image: image
     })
-    console.log("Post", Post)
     try {
         const savedPublication = await Post.save()
         return savedPublication
@@ -33,12 +32,12 @@ export const createPublicationService = async (Topic: String, Date_Publication: 
 }
 
     export const uploadImage = async (filePath: string) =>{
-        return await cloudinary.uploader.upload(filePath, {
+    return await cloudinary.uploader.upload(filePath, {
         /* Creating a folder in the cloudinary account. */
             folder: 'wikideas_publications'
-            })
-        }
+    })
+    }
 
     export const deleteImage = async (id: string) => {
-        return await cloudinary.uploader.destroy(id)
+    return await cloudinary.uploader.destroy(id)
     }

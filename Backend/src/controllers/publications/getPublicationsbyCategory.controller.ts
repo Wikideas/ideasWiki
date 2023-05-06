@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getPublicationsbyCategoryService } from '../services/getPublicationsbyCategory.service';
+import { getPublicationsbyCategoryService } from '../../services/publications/getPublicationsbyCategory.service';
 
 export const getPublicationsbyIdCategoryController = async (req: Request, res: Response) => {
     const { id } = req.params;

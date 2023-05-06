@@ -1,4 +1,4 @@
-import Publication from "../models/publication";
+import Publication from "../../models/publication";
 
 export const editPublicationService = async (id: String, Topic: String, Date_Publication: Date, Date_Ultime_Edit: Date, Category: String, Detail: String) => {
     try {

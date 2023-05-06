@@ -1,5 +1,5 @@
 import { Response, Request } from 'express';
-import { getSuggestedPublicationsService } from '../services/getSuggestedPublications.service';
+import { getSuggestedPublicationsService } from '../../services/publications/getSuggestedPublications.service';
 
 export const getSuggestedPublicationsController = async (req: Request, res: Response) => {
     const { numSuggestedPublicationsIn } = req.params;

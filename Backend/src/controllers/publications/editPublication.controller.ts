@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { editPublicationService } from '../services/editPublication.service';
+import { editPublicationService } from '../../services/publications/editPublication.service';
 
 export const editPublicationController = async (req: Request, res: Response) => {
     const id = req.params.id

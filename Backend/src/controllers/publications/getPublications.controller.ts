@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getPublicationsService } from '../services/getPublications.service';
+import { getPublicationsService } from '../../services/publications/getPublications.service';
 
 export const getPublicationsController = async (req: Request, res: Response) => {
     try {

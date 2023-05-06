@@ -1,5 +1,5 @@
-import Publication from '../models/publication';
-import { numb } from '../utils/countDocs';
+import Publication from '../../models/publication';
+import { numb } from '../../utils/countDocs';
 
 export const getLastPublicationService = async () => {
     const numPublications = await numb()

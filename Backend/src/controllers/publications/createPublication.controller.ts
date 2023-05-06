@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import { createPublicationService, deleteImage, uploadImage } from '../services/createPublication.service';
+import { createPublicationService, deleteImage, uploadImage } from '../../services/publications/createPublication.service';
 const fs = require('fs/promises');
 
 export const createPublicationController = async (req: Request, res: Response, next: NextFunction) => {

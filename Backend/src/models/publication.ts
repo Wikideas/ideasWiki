@@ -8,6 +8,8 @@ export interface Publication extends Document {
     Topic: string
     Category: mongoose.Schema.Types.ObjectId
     Detail: string
+    id_Image: string
+    image: string
 }
 
 const publicationSchema = new Schema<Publication>({
@@ -33,6 +35,12 @@ const publicationSchema = new Schema<Publication>({
     Detail: {
         type: String,
         required: true
+    },
+    id_Image: {
+        type: String
+    },
+    image: {
+        type: String
     }
 })
 

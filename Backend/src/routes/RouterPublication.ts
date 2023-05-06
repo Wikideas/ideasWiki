@@ -13,6 +13,10 @@ import { getPublicationsbyIdCategoryController } from "../controllers/getPublica
 import { createCategoryController } from "../controllers/createCategory.controller";
 import { getLastPublicationController } from "../controllers/getLastPublication.controller";
 import { getSuggestedPublicationsController } from "../controllers/getSuggestedPublications.controller";
+const fileUpload = require('express-fileupload')({
+  useTempFiles: true,
+  tempFileDir: './tmp',
+});
 
 const router = express.Router()
 
@@ -25,7 +29,7 @@ router.get("/getPublication/:string", getPublicationsByStringController);
 router.get("/getPublicationbyNumDoc/:num", getPublicationbyNumDocController);
 router.get("/getPublicationbyTopic/:Topic", getPublicationbyTopicController);
 router.get("/getPublicationbyIdCategory/:id", getPublicationsbyIdCategoryController);
-router.post("/createPublication", checking, createPublicationController);
+router.post("/createPublication", fileUpload, createPublicationController);
 router.put("/editPublication/:id", checking, editPublicationController);
 router.get("", homeController);
 router.get("*", notFoundRouteController);

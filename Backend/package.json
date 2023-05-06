@@ -6,15 +6,18 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "build:watch": "tsc --build tsconfig.json --watch",
-    "start": "nodemon js/server.js",
-    "start-all": "npm run build && npm start"
+    "start": "node js/server.js",
+    "dev": "nodemon js/server.js",
+    "start-all": "npm run build && npm run dev"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.36.4",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
     "express-validator": "^6.14.3",
     "mongodb": "^5.0.0",
     "mongoose": "^6.7.2",

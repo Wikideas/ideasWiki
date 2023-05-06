@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "build:watch": "tsc --build tsconfig.json --watch",
-    "start": "nodemon js/server.js",
+    "start": "node js/server.js",
     "start-all": "npm run build && npm start"
   },
   "author": "",

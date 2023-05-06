@@ -1,4 +1,4 @@
-import CategoryPublication from "../models/categoryPublication"
+import CategoryPublication from "../../models/categoryPublication"
 
 export const createCategoryService = async (namecategory: string) => {
     try {

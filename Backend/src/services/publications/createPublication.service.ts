@@ -1,5 +1,5 @@
-import { numb } from '../utils/countDocs'
-import Publication from '../models/publication'
+import { numb } from '../../utils/countDocs'
+import Publication from '../../models/publication'
 
 export const createPublicationService = async (Topic: String, Date_Publication: Date, Date_Ultime_Edit: Date, Category: String, Detail: String) => {
     const numPublication = await numb();

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getPublicationbyNumDocService } from '../services/getPublicationsbyNumDoc.service';
+import { getPublicationbyNumDocService } from '../../services/publications/getPublicationsbyNumDoc.service';
 
 export const getPublicationbyNumDocController = async (req: Request, res: Response) => {
     const { num } = req.params;

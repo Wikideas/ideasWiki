@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import monggose, { Schema, Document } from 'mongoose'
+import mongoose from 'mongoose';
+import monggose, { Schema, Document } from 'mongoose';
 
 export interface Publication extends Document {
     num_Publication: string
@@ -7,7 +7,7 @@ export interface Publication extends Document {
     Date_Ultime_Edit: Date
     Topic: string
     Category: mongoose.Schema.Types.ObjectId
-    Detail: string
+    Detail: Array<mongoose.Schema.Types.ObjectId>
 }
 
 const publicationSchema = new Schema<Publication>({
@@ -31,7 +31,8 @@ const publicationSchema = new Schema<Publication>({
         required: true
     },
     Detail: {
-        type: String,
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Section',
         required: true
     }
 })

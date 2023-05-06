@@ -1,4 +1,4 @@
-import Publication from '../models/publication';
+import Publication from '../../models/publication';
 
 export const getPublicationsByStringService = async (string: string) => {
     interface TopicDoc {

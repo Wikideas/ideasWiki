@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { createPublicationService } from '../services/createPublication.service';
+import { createPublicationService } from '../../services/publications/createPublication.service';
 
 export const createPublicationController = async (req: Request, res: Response) => {
     const { Topic, Date_Publication, Date_Ultime_Edit, Category, Detail } = req.body

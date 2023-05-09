@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/articulo.css";
 import "../styles/articulosMediasQueries.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import TemasRelacionados from "./TemasRelacionados";
 
  {/*   <Box sx={{ display: 'flex' }}>
 <CircularProgress />
@@ -10,6 +11,42 @@ import Box from "@mui/material/Box";
 
 function Articulos() {
   const [loading, setLoading] = useState(false);
+  const paginaRef = useRef(null);
+  const [editable, setEditable] = useState(false);
+ 
+
+   /*Recorremos cada elemento para que el contenido
+   sea editable al hacer click  */
+
+  const handleClick = () => {
+    const elementos = paginaRef.current.querySelectorAll('.editableCont');
+    elementos.forEach(elemento => {
+      elemento.contentEditable = true;
+    });
+    setEditable(true);
+  };
+
+   /* Guardando en localstorage */
+
+   useEffect(() => {
+    const contenidoGuardado = localStorage.getItem('contenidoEditable');
+    if (contenidoGuardado) {
+      paginaRef.current.innerHTML = contenidoGuardado;
+    }
+  }, []);
+
+  /* Boton de guardado */
+
+  const handleSave = () => {
+    const elementos = paginaRef.current.querySelectorAll('.editableCont');
+    elementos.forEach(elemento => {
+      elemento.contentEditable = false;
+    });
+    setEditable(false);
+    localStorage.setItem('contenidoEditable', paginaRef.current.innerHTML);
+  };
+
+  /* Spinner de carga */
 
   useEffect(() => {
     setLoading(true);
@@ -18,12 +55,14 @@ function Articulos() {
     }, 3000);
   }, []);
 
+
+
   return (
     <div>
 
     
-     <div>
-          <section className="cuerpo1">
+     <div ref={paginaRef}>
+          <section className="cuerpo1 editableCont">
             <div className="row">
               <div className="iconos">
                 {/*    <i class="fa-sharp fa-solid fa-arrow-left"></i> */}
@@ -33,11 +72,11 @@ function Articulos() {
               </div>
 
               <div className="tituloArticulo">
-                <h2>CSS y buenas practicas en desarrollo web</h2>
+                <h2 id="123">CSS y buenas practicas en desarrollo web</h2>
               </div>
 
               <div className="detalleArticulo">
-                <p>
+                <p id="456">
                   CSS (Cascading Style Sheets) es una herramienta fundamental en
                   el desarrollo de sitios web modernos. Permite separar la
                   estructura y contenido de una página web de su presentación
@@ -48,11 +87,14 @@ function Articulos() {
                   óptima. En este artículo, revisaremos algunas de las mejores
                   prácticas de CSS a seguir en el desarrollo web.
                 </p>
+                
+                    <button className="btn btn-secondary ms-3" onClick={() => handleSave()}>Guardar</button> 
+                    <button className="btn btn-secondary ms-3" onClick={() => handleClick()}>Editar</button> 
               </div>
             </div>
           </section>
 
-          <section className="cuerpo2">
+          <section className="cuerpo2 editableCont">
             <div className="row">
               <div className="imagenArticulo">
                 <div>
@@ -214,78 +256,7 @@ function Articulos() {
             </div>
           </section>
 
-          <section className="temas">
-            <div className="TemasRelacionados">
-              <p>
-                <b>Temas relacionados</b>
-              </p>
-            </div>
-
-            <div className="box-container">
-              <tr className="card">
-                <td className="contImagen">
-                  <img src="https://res.cloudinary.com/da5fzpyjp/image/upload/v1676654065/flores/pexels-photo-8350708_zn8pep.jpg"></img>
-                </td>
-                <td className="contTitulo">
-                  <h6>Titulo</h6>
-                </td>
-                <td className="contParrafo">
-                  <p>
-                    Forem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc vulputate libero et velit interdum, ac aliquet odio
-                    mattis.
-                  </p>
-                </td>
-                <td className="contBoton">
-                  <button type="button" class="btn btn-secondary">
-                    Ver mas
-                  </button>
-                </td>
-              </tr>
-
-              <tr className="card">
-                <td className="contImagen">
-                  <img src="https://res.cloudinary.com/da5fzpyjp/image/upload/v1676654065/flores/pexels-photo-8350708_zn8pep.jpg"></img>
-                </td>
-                <td className="contTitulo">
-                  <h6>Titulo</h6>
-                </td>
-                <td className="contParrafo">
-                  <p>
-                    Forem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc vulputate libero et velit interdum, ac aliquet odio
-                    mattis.
-                  </p>
-                </td>
-                <td className="contBoton">
-                  <button type="button" class="btn btn-secondary">
-                    Ver mas
-                  </button>
-                </td>
-              </tr>
-
-              <tr className="card">
-                <td className="contImagen">
-                  <img src="https://res.cloudinary.com/da5fzpyjp/image/upload/v1676654065/flores/pexels-photo-8350708_zn8pep.jpg"></img>
-                </td>
-                <td className="contTitulo">
-                  <h6>Titulo</h6>
-                </td>
-                <td className="contParrafo">
-                  <p>
-                    Forem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc vulputate libero et velit interdum, ac aliquet odio
-                    mattis.
-                  </p>
-                </td>
-                <td className="contBoton">
-                  <button type="button" class="btn btn-secondary">
-                    Ver mas
-                  </button>
-                </td>
-              </tr>
-            </div>
-          </section>
+          <TemasRelacionados/>
         </div>
 
     

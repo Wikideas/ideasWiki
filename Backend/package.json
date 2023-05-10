@@ -6,13 +6,9 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "build:watch": "tsc --build tsconfig.json --watch",
-    "start": "node js/server.js",
-<<<<<<< HEAD
     "dev": "nodemon js/server.js",
-    "start-all": "npm run build && npm run dev"
-=======
-    "start-all": "npm run build && npm start"
->>>>>>> v1.0.0
+    "start": "node js/server.js",
+    "start-all": "npm run build && npm run start"
   },
   "author": "",
   "license": "ISC",

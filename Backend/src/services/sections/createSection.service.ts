@@ -6,7 +6,7 @@ export const createSectionService = async (sections: Array<ISection>) => {
     const idsInserted: Array<ObjectId> = [];
 
     const existDuplicatesTitles = (sections: Array<ISection>): boolean => {
-        const values = sections.map(section => section.sectionTitle);
+        const values = sections.map(section => section.sectionTitleId);
         return values.some((value, index) => values.indexOf(value) !== index);
     }
     const existDuplicatesbyTitle = existDuplicatesTitles(sections);
@@ -17,10 +17,9 @@ export const createSectionService = async (sections: Array<ISection>) => {
             await Promise.all(
                 sections.map(async (section: ISection) => {
                     const sectionToInsert = new Section({
-                        sectionTitle: section.sectionTitle,
+                        sectionTitleId: section.sectionTitleId,
                         sectionDetail: section.sectionDetail,
-                        sectionImage: section.sectionImage,
-                        cloudinaryImageId: section.cloudinaryImageId
+                        sectionImageId: section.sectionImageId
                     })
                     const newSection = await sectionToInsert.save();
                     idsInserted.push(newSection._id);

@@ -1,9 +1,8 @@
 import { numb } from '../../utils/countDocs'
-import Publication from '../../models/publication'
-const cloudinary = require('../config/cloudinary.config')
+import Publication, { IPublication } from '../../models/publication'
 
 
-export const createPublicationService = async (Topic: String, Date_Publication: Date, Date_Ultime_Edit: Date, Category: String, Detail: String, id_Image: String, image: String) => {
+export const createPublicationService = async (Topic: String, Date_Publication: Date, Date_Ultime_Edit: Date, Category: String, Detail: Array<IPublication>  ) => {
     const numPublication = await numb();
     try {
         const existPublication = await Publication.findOne({ Topic: Topic })
@@ -20,8 +19,6 @@ export const createPublicationService = async (Topic: String, Date_Publication: 
         Date_Ultime_Edit: Date_Ultime_Edit,
         Category: Category,
         Detail: Detail,
-        id_Image: id_Image,
-        image: image
     })
     try {
         const savedPublication = await Post.save()
@@ -30,14 +27,3 @@ export const createPublicationService = async (Topic: String, Date_Publication: 
         throw new Error('An error occurred while trying to save the publication')
     }
 }
-
-    export const uploadImage = async (filePath: string) =>{
-    return await cloudinary.uploader.upload(filePath, {
-        /* Creating a folder in the cloudinary account. */
-            folder: 'wikideas_publications'
-    })
-    }
-
-    export const deleteImage = async (id: string) => {
-    return await cloudinary.uploader.destroy(id)
-    }

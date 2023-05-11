@@ -6,7 +6,11 @@ import BarraDeBusqueda from '../components/BarraDeBusqueda';
 import ArticulosRecientes from '../components/ArticulosRecientes';
 /* import Carousel from '../components/Carousel' */
 import ArticulosPopulares from '../components/ArticulosPopulares';
+<<<<<<< HEAD
 import Carousel from '../components/Carousel'
+=======
+/* import CrearArticulo from './CrearArticulo'; */
+>>>>>>> v1.0.0
 import "../styles/Inicio.css";
 
 
@@ -46,11 +50,16 @@ function Inicio() {
           </div>
         </div>
       </MediaQuery>
+<<<<<<< HEAD
      
        <Carousel/> 
    {/*    <Carousel /> */}
+=======
+       <Carousel/>
+>>>>>>> v1.0.0
       <ArticulosRecientes/>
-      <ArticulosPopulares/>
+      <ArticulosPopulares/> 
+     {/*  <CrearArticulo/> */}
     </div>
     )}
   </>

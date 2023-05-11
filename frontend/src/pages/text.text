@@ -3,10 +3,17 @@ import "../styles/carousel.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useApiCategory } from "../hooks/useApiCategory";
+<<<<<<< HEAD
 import LoaderDisenio from "./Loader/LoaderDisenio"; 
 import Loader from "./Loader/Loader"
 
 const Carousel = () => {
+=======
+import LoaderDisenio from "../components/Loader/LoaderDisenio"; 
+import Loader from "../components/Loader/Loader"
+
+const Carouseleq = () => {
+>>>>>>> v1.0.0
   //Funcion para cambio de estado
  /*  const [category, setCategory] = useState([""]);  */
   //console.log(category);
@@ -105,7 +112,11 @@ const Carousel = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Carousel;
+=======
+export default Carouseleq;
+>>>>>>> v1.0.0
 
 
 /* 

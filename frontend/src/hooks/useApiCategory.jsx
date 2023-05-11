@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const useApiCategory = (urlLink, arr = []) => {
 
-     
+    
     const [data, setData] = useState([""]);
     const [loading, setLoading] = useState(true);
     
@@ -19,8 +19,13 @@ export const useApiCategory = (urlLink, arr = []) => {
           });
          /*  console.log(result.data.data[0].nameCategory); */
     
+<<<<<<< HEAD
           setData(result.data.categories);
           /* console.log(result.data) */
+=======
+          // se corrige a data.categories
+          setData(result.data.categories);
+>>>>>>> v1.0.0
           setLoading(false)
         };
         obtenerCategory();
@@ -29,5 +34,5 @@ export const useApiCategory = (urlLink, arr = []) => {
     /*   console.log(category, "category"); */
 
     return ({data,
-           loading })
+            loading })
 }

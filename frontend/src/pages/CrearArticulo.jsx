@@ -36,7 +36,7 @@ function CrearArticulo() {
       <TextArea/>
       <NuevoTextArea/>
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faHouse, faX, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "../styles/crearArticulo.css";

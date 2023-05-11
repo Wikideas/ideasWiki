@@ -1,28 +1,26 @@
 import mongoose, { Schema, Document } from 'mongoose'
 
 export interface ISection extends Document {
-    sectionTitle: mongoose.Schema.Types.ObjectId,
+    sectionTitleId: mongoose.Schema.Types.ObjectId,
     sectionDetail: string,
-    sectionImage: string,
+    sectionImageId: mongoose.Schema.Types.ObjectId,
     cloudinaryImageId: string
 }
 
 const sectionSchema = new Schema<ISection>({
-    sectionTitle: {
+    sectionTitleId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'SectionTitle',
+        ref: 'sectionTitle',
         required: true
     },
     sectionDetail: {
         type: String,
         required: true
     },
-    sectionImage: {
-        type: String
+    sectionImageId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'sectionImage',
     },
-    cloudinaryImageId: {
-        type: String
-    }
 })
 const Section = mongoose.model<ISection>('Section', sectionSchema)
 export default Section

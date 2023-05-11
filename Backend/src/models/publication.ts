@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import monggose, { Schema, Document } from 'mongoose';
 
-export interface Publication extends Document {
+export interface IPublication extends Document {
     num_Publication: string
     Date_Publication: Date
     Date_Ultime_Edit: Date
@@ -10,7 +10,7 @@ export interface Publication extends Document {
     Detail: Array<mongoose.Schema.Types.ObjectId>
 }
 
-const publicationSchema = new Schema<Publication>({
+const publicationSchema = new Schema<IPublication>({
     num_Publication: {
         type: String,
         unique: true
@@ -32,10 +32,10 @@ const publicationSchema = new Schema<Publication>({
     },
     Detail: {
         type: [mongoose.Schema.Types.ObjectId],
-        ref: 'Section',
+        ref: 'section',
         required: true
-    }
+    },
 })
 
-const Publication = monggose.model<Publication>('Publication', publicationSchema)
+const Publication = monggose.model<IPublication>('Publication', publicationSchema)
 export default Publication;

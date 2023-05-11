@@ -1,7 +1,8 @@
 import { numb } from '../../utils/countDocs'
-import Publication from '../../models/publication'
+import Publication, { IPublication } from '../../models/publication'
 
-export const createPublicationService = async (Topic: String, Date_Publication: Date, Date_Ultime_Edit: Date, Category: String, Detail: String) => {
+
+export const createPublicationService = async (Topic: String, Date_Publication: Date, Date_Ultime_Edit: Date, Category: String, Detail: Array<IPublication>  ) => {
     const numPublication = await numb();
     try {
         const existPublication = await Publication.findOne({ Topic: Topic })
@@ -17,7 +18,7 @@ export const createPublicationService = async (Topic: String, Date_Publication: 
         Date_Publication: Date_Publication,
         Date_Ultime_Edit: Date_Ultime_Edit,
         Category: Category,
-        Detail: Detail
+        Detail: Detail,
     })
     try {
         const savedPublication = await Post.save()

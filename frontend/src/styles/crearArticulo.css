@@ -1,4 +1,70 @@
 
+.imgCont {
+    width: 100%;
+    height: 35vh;
+    background-color: var(--color-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+
+.buttonsContainer {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+
+.imgText {
+    width: 70%;
+    height: 45px;
+    text-align: start;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    resize: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.carouselCont {
+    width: 100%;
+    height: 15vh;
+    padding-top: 10px;
+}
+
+.dropMenu {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dropButton {
+    border: none;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.butons {
+    background: transparent;
+    border: none;
+}
+
+.butonsWithBg {
+    color: white;
+    background: black;
+    border: none;
+    padding: 3px;
+    border-radius: 5px;
+=======
+
 
 
 .navCrearArticulo{

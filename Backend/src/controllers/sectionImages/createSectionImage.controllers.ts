@@ -15,9 +15,10 @@ export const createSectionImageController = async (req: Request, res: Response) 
 
         await fs.rmdir('./tmp', { recursive: true });
 
-        await createSectionImageService(sectionImage, cloudinaryImageId )
+        const imageData = await createSectionImageService(sectionImage, cloudinaryImageId )
         res.status(201).json({
-            ok: 'Section image successfully created'
+            ok: 'Section image successfully created',
+            data: imageData
         })
     } catch (error: any) {
         if (sectionImage !== undefined && typeof sectionImage === 'string') {

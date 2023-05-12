@@ -6,7 +6,7 @@ import { useApiCategory } from "../hooks/useApiCategory";
 import LoaderDisenio from "../components/Loader/LoaderDisenio"; 
 import Loader from "../components/Loader/Loader"
 
-const Carouseleq = () => {
+const Carousel = () => {
   //Funcion para cambio de estado
  /*  const [category, setCategory] = useState([""]);  */
   //console.log(category);
@@ -105,45 +105,4 @@ const Carouseleq = () => {
   );
 };
 
-export default Carouseleq;
-
-
-/* 
-   //Funcion para llamar a la API
-  useEffect(() => {
-    //llamado asincronico de la API
-    const obtenerCategory = async () => {
-      const url = "https://serviceone.onrender.com/apiWikiIdeasV1d/getCategory";
-      const result = await axios.get(url).catch((error) => {
-        console.log(error);
-      });
-
-      console.log(result.data.data[0].nameCategory);
-
-      setCategory(result.data.data);
-    };
-    obtenerCategory();
-  }, []);
-  console.log(category, "category"); //comprobar si trae el array del api  */
-
-
-
-
-
-
-
-
-/*  const [width, setWidth] = useState(0);
-  const slider_container = useRef()
- 
-  useEffect(() => {
-    if (slider_container.current) {
-      const newWidth = slider_container.current.scrollWidth - slider_container.current.offsetWidth 
-      console.log(newWidth + 'console')
-      setWidth(newWidth)
-    } 
-     setWidth(slider_container.current.scrollWidth - slider_container.current.offsetWidth)
-    const newWidth = slider_container.current.scrollWidth - slider_container.current.offsetWidth 
-    console.log(newWidth)
-    setWidth(newWidth) 
-  }, []); */
+export default Carousel;

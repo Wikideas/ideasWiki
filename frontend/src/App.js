@@ -3,18 +3,18 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import "./App.css";
 import Navbar from './components/Navbar';
 import Inicio from './pages/Inicio';
-import CrearArticulo from './pages/CrearArticulo';
+/* import CrearArticulo from './pages/CrearArticulo'; */
 import Comunidad from './pages/Comunidad';
 import SobreNosotros from './pages/SobreNosotros';
 import Configuracion from './pages/Configuracion';
 import NotFound from './pages/NotFound';
 /* import Articulo from './pages/Articulo'; */
 
-
 import Articulos from './pages/Articulos'
 import Search from './pages/Search';
 import Categorias from './pages/Categorias';
 import Footer from './components/Footer';
+import CrearArticuloNew from './pages/CrearArticuloNew';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
 
           <Routes>
             <Route exact path='/' element={<Inicio />} />
-            <Route exact path='/crearArticulo' element={<CrearArticulo />} />
+             <Route exact path='/crearArticulo' element={<CrearArticuloNew/>} /> 
             <Route exact path='/comunidad' element={<Comunidad />} />
             <Route exact path='/sobreNosotros' element={<SobreNosotros />} />
             <Route exact path='/configuracion' element={<Configuracion />} />
@@ -43,6 +43,7 @@ function App() {
 
         <Footer />
     </BrowserRouter>
+   
   );
 }
 

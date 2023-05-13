@@ -2,7 +2,7 @@ import { numb } from '../../utils/countDocs'
 import Publication, { IPublication } from '../../models/publication'
 
 
-export const createPublicationService = async (Topic: String, Date_Publication: Date, Date_Ultime_Edit: Date, Category: String, Detail: Array<IPublication>  ) => {
+export const createPublicationService = async (Topic: String, CategoryId: String, Detail: Array<IPublication>) => {
     const numPublication = await numb();
     try {
         const existPublication = await Publication.findOne({ Topic: Topic })
@@ -15,15 +15,14 @@ export const createPublicationService = async (Topic: String, Date_Publication: 
     const Post = new Publication({
         num_Publication: numPublication,
         Topic: Topic,
-        Date_Publication: Date_Publication,
-        Date_Ultime_Edit: Date_Ultime_Edit,
-        CategoryId: Category,
+        CategoryId: CategoryId,
         Detail: Detail,
     })
     try {
         const savedPublication = await Post.save()
         return savedPublication
     } catch (error) {
+        console.error(error)
         throw new Error('An error occurred while trying to save the publication')
     }
 }

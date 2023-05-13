@@ -4,7 +4,7 @@ import monggose, { Schema, Document } from 'mongoose';
 export interface IPublication extends Document {
     num_Publication: string
     Topic: string
-    Category: mongoose.Schema.Types.ObjectId
+    CategoryId: mongoose.Schema.Types.ObjectId
     Detail: Array<mongoose.Schema.Types.ObjectId>
     createdAt: Date
     updatedAt: Date
@@ -19,7 +19,7 @@ const publicationSchema = new Schema<IPublication>({
         type: String,
         required: true
     },
-    Category: {
+    CategoryId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'categoryPublication',
         required: true

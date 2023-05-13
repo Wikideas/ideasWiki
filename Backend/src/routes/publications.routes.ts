@@ -23,7 +23,7 @@ router.get('/getPublication/:string', getPublicationsByStringController);
 router.get('/getPublicationbyNumDoc/:num', getPublicationbyNumDocController);
 router.get('/getPublicationbyTopic/:Topic', getPublicationbyTopicController);
 router.get('/getPublicationbyIdCategory/:id', getPublicationsbyIdCategoryController);
-router.post('/createPublication', fileUpload, createPublicationController);
+router.post('/createPublication', createPublicationController);
 router.put('/editPublication/:id', checking, editPublicationController);
 
 export default router;

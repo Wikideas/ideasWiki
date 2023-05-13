@@ -19,6 +19,9 @@ import { createSectionController } from '../controllers/sections/createSection.c
 import { getSectionsController } from "../controllers/sections/getSectionsController";
 import { getSectionImagesController } from "../controllers/sectionImages/getSectionImages.controller";
 import { createSectionImageController } from "../controllers/sectionImages/createSectionImage.controllers";
+import { getSectionByIdController } from "../controllers/sections/getSectionById.controller";
+import { editSectionController } from "../controllers/sections/editSection.controller";
+
 const fileUpload = require('express-fileupload')({
   useTempFiles: true,
   tempFileDir: './tmp',
@@ -27,10 +30,11 @@ const fileUpload = require('express-fileupload')({
 const router = express.Router()
 
 router.get('/sections', getSectionsController);
-router.post('/createSection', createSectionController);
+router.get('/sections/:id', getSectionByIdController);
+router.post('/sections', createSectionController);
 router.get('/section-titles', getSectionTitlesController);
 router.post('/section-titles', createSectionTitleController);
-router.get('/section-images',  getSectionImagesController);
+router.get('/section-images', getSectionImagesController);
 router.post('/section-images', fileUpload, createSectionImageController);
 router.get('/getPublications', getPublicationsController);
 router.get('/getLastPublication', getLastPublicationController);
@@ -43,6 +47,7 @@ router.get('/getPublicationbyTopic/:Topic', getPublicationbyTopicController);
 router.get('/getPublicationbyIdCategory/:id', getPublicationsbyIdCategoryController);
 router.post('/createPublication', fileUpload, createPublicationController);
 router.put('/editPublication/:id', checking, editPublicationController);
+router.put('/sections/:id', editSectionController);
 router.get('', homeController);
 router.get('*', notFoundRouteController);
 

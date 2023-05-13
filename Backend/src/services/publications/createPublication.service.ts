@@ -17,7 +17,7 @@ export const createPublicationService = async (Topic: String, Date_Publication: 
         Topic: Topic,
         Date_Publication: Date_Publication,
         Date_Ultime_Edit: Date_Ultime_Edit,
-        Category: Category,
+        CategoryId: Category,
         Detail: Detail,
     })
     try {

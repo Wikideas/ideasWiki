@@ -1,14 +1,14 @@
-import { Request, Response } from 'express'
+import { Request, Response } from 'express';
 import { createSectionService } from '../../services/sections/createSection.service';
-import { ISection } from '../../models/section';
+
 
 export const createSectionController = async (req: Request, res: Response) => {
-    const sections  = req.body;
-    try {        
-        const sectionsIds = await createSectionService(sections);
+    const { section } = req.body;
+    try {
+        const sectionId = await createSectionService(section);
         res.status(201).json({
-            ok: 'Sections successfully created',
-            idsCreatedSections: sectionsIds
+            ok: 'Section successfully created',
+            idCreatedSection: sectionId
         });
     } catch (error: any) {
         res.status(500).json({

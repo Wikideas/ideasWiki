@@ -1,6 +1,6 @@
-import express from "express";
-import { homeController } from "../controllers/home.controller";
-import { notFoundRouteController } from "../controllers/notFoundRoute.controller";
+import express from 'express';
+import { homeController } from '../controllers/home.controller';
+import { notFoundRouteController } from '../controllers/notFoundRoute.controller';
 
 const router = express.Router()
 

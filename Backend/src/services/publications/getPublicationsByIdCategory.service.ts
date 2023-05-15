@@ -1,6 +1,6 @@
-import Publication from '../../models/publication';
+import Publication from '../../models/publication.model';
 
-export const getPublicationsbyCategoryService = async (id: String) => {
+export const getPublicationsByIdCategoryservice = async (id: String) => {
     try {
         const publications = await Publication.find({ Category: { $in: [id] } });
         return publications;

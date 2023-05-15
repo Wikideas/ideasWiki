@@ -1,4 +1,4 @@
-import Section from '../../models/section';
+import Section from '../../models/section.model';
 
 export const getSectionByIdService = async (id: string) => {
     try {

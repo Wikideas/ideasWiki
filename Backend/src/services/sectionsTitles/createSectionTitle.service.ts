@@ -1,5 +1,5 @@
-import SectionTitle from '../../models/sectionTitle';
-import { ISectionTitle } from '../../models/sectionTitle';
+import SectionTitle from '../../models/sectionTitle.model';
+import { ISectionTitle } from '../../models/sectionTitle.model';
 
 export const createSectionTitleService = async (sectionTitle: string) => {
     try {

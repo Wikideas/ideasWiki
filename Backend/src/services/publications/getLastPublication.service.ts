@@ -1,10 +1,10 @@
-import Publication from '../../models/publication';
+import Publication from '../../models/publication.model';
 import { numb } from '../../utils/countDocs';
 
 export const getLastPublicationService = async () => {
-    const numPublications = await numb()
+    const countPublications = await numb()
     try {
-        const lastPublication = await Publication.find({ num_Publication: Number(numPublications) - 1 });
+        const lastPublication = await Publication.findOne({ numberPublication: Number(countPublications) - 1 });
         return lastPublication;
     } catch (error) {
         throw new Error('An error has occurred on the server, please contact the administrator.');

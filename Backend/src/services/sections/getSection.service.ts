@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongoose';
-import Section from '../../models/section';
+import Section from '../../models/section.model';
 
 export const getSectionsService = async (sectionsIds: Array<ObjectId>) => {
     try {

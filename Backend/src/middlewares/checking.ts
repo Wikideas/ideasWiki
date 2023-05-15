@@ -1,12 +1,12 @@
-import { check } from "express-validator"
-import { dataValidation } from "../utils/validator"
+import { check } from 'express-validator'
+import { dataValidation } from '../utils/validator'
 export const checking = [
-    check('Topic', 'The topic is required').not().isEmpty(),
-    check('Topic', ' The category not can get over 100 characters').isLength({ max: 100 }),
-    check('Detail', 'The detail is required').not().isEmpty(),
-    //matches(/^[a-zA-Z0-9\(\)\[\]:\.]+$/).withMessage("msg"),
-    check('CategoryId', 'The category is required').not().isEmpty(),
-    check('CategoryId', ' The category not can get over 40 characters').isLength({ max: 40 }),
+    check('topic', 'The topic is required').not().isEmpty(),
+    check('topic', ' The category not can get over 100 characters').isLength({ max: 100 }),
+    check('detail', 'The detail is required').not().isEmpty(),
+    //matches(/^[a-zA-Z0-9\(\)\[\]:\.]+$/).withMessage('msg'),
+    check('categoryId', 'The category is required').not().isEmpty(),
+    check('categoryId', ' The category not can get over 40 characters').isLength({ max: 30 }),
     dataValidation
 ]
 

@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 import cors from "cors";
 import mongoose from 'mongoose';
 
-import { dbConnection } from './src/db/dbConnection';
+import { dbConnection } from './src/db/dbConnectionMongoose';
 import publicationsRouter from './src/routes/publications.routes';
 import sectionsRouter from './src/routes/sections.routes';
 import categoriesRouter from './src/routes/categories.routes';

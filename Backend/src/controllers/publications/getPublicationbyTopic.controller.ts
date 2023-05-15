@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getPublicationByTopicService } from '../../services/publications/getPublicationByTopic.service';
+import { getPublicationByTopicService } from '../../services/publications/getPublicationsByTopic.service';
 
 export const getPublicationByTopicController = async (req: Request, res: Response) => {
     const { topic } = req.params

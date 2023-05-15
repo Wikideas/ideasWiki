@@ -1,4 +1,4 @@
-import SectionTitle from "../../models/sectionTitle";
+import SectionTitle from '../../models/sectionTitle.model';
 
 export const getSectionTitlesService = async () => {
     try {

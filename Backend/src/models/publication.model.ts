@@ -2,29 +2,29 @@ import mongoose from 'mongoose';
 import monggose, { Schema, Document } from 'mongoose';
 
 export interface IPublication extends Document {
-    num_Publication: string
-    Topic: string
-    CategoryId: mongoose.Schema.Types.ObjectId
-    Detail: Array<mongoose.Schema.Types.ObjectId>
+    topic: string,
+    numberPublication: string
+    categoryId: mongoose.Schema.Types.ObjectId
+    detail: Array<mongoose.Schema.Types.ObjectId>
     createdAt: Date
     updatedAt: Date
 }
 
 const publicationSchema = new Schema<IPublication>({
-    num_Publication: {
+    numberPublication: {
         type: String,
         unique: true
     },
-    Topic: {
+    topic: {
         type: String,
         required: true
     },
-    CategoryId: {
+    categoryId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'categoryPublication',
         required: true
     },
-    Detail: {
+    detail: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: 'section',
         required: true

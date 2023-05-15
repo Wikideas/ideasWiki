@@ -1,5 +1,5 @@
-import { Response } from "express";
-import Publication from "../models/publication";
+import { Response } from 'express';
+import Publication from '../models/publication.model';
 
 export const insert = async (
     res: Response,
@@ -30,7 +30,7 @@ export const insert = async (
                     } else {
                         console.log('Publication saved successfully!');
                         res.status(201).json({
-                            ok: "Publication saved successfully!"
+                            ok: 'Publication saved successfully!'
                         })
                     }
                 })

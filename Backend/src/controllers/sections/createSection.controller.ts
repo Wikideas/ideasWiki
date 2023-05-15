@@ -3,9 +3,9 @@ import { createSectionService } from '../../services/sections/createSection.serv
 
 
 export const createSectionController = async (req: Request, res: Response) => {
-    const { section } = req.body;
+    const { sectionTitleId, sectionDetail, sectionImageId } = req.body;
     try {
-        const sectionId = await createSectionService(section);
+        const sectionId = await createSectionService(sectionTitleId, sectionDetail, sectionImageId);
         res.status(201).json({
             ok: 'Section successfully created',
             idCreatedSection: sectionId

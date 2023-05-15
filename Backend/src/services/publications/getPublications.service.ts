@@ -1,4 +1,4 @@
-import Publication from "../../models/publication";
+import Publication from '../../models/publication.model';
 
 export const getPublicationsService = async () => {
     try {

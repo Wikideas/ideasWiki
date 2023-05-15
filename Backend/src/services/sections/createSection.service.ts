@@ -1,11 +1,10 @@
-import Section from '../../models/section';
-import { ISection } from '../../models/section';
+import Section from '../../models/section.model';
 
-export const createSectionService = async (section: ISection) => {
+export const createSectionService = async (sectionTitleId: string, sectionDetail: string, sectionImageId: string) => {
     const sectionToInsert = new Section({
-        sectionTitleId: section.sectionTitleId,
-        sectionDetail: section.sectionDetail,
-        sectionImageId: section.sectionImageId
+        sectionTitleId: sectionTitleId,
+        sectionDetail: sectionDetail,
+        sectionImageId: sectionImageId
     })
     try {
         const newSection = await sectionToInsert.save();

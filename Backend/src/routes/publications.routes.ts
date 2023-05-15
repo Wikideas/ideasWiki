@@ -5,7 +5,7 @@ import { editPublicationController } from '../controllers/publications/editPubli
 import { checking } from '../middlewares/checking';
 import { getPublicationsByStringController } from '../controllers/publications/getPublicationsByString.controller';
 import { getPublicationByNumberController } from '../controllers/publications/getPublicationByNumber.controller';
-import { getPublicationByTopicController } from '../controllers/publications/getPublicationByTopic.controller';
+import { getPublicationByTopicController } from '../controllers/publications/getPublicationsByTopic.controller';
 import { getPublicationsByIdCategoryController } from '../controllers/publications/getPublicationsByIdCategory.controller';
 import { getLastPublicationController } from '../controllers/publications/getLastPublication.controller';
 import { getSuggestedPublicationsController } from '../controllers/publications/getSuggestedPublications.controller';

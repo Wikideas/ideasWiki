@@ -3,7 +3,7 @@
 #environment
 .env
 #js
-/dist
+/js
 
 
 

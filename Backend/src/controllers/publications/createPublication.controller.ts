@@ -2,9 +2,9 @@ import { Request, Response, NextFunction } from 'express'
 import { createPublicationService } from '../../services/publications/createPublication.service';
 
 export const createPublicationController = async (req: Request, res: Response) => {
-    const { Topic, CategoryId, Detail } = req.body
+    const { topic, categoryId, detail } = req.body;
     try {
-        await createPublicationService(Topic, CategoryId, Detail)
+        await createPublicationService(topic, categoryId, detail)
         res.status(201).json({
             ok: 'Publication successfully created'
         })

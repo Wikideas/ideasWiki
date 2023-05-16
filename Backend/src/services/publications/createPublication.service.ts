@@ -1,22 +1,22 @@
 import { numb } from '../../utils/countDocs'
-import Publication, { IPublication } from '../../models/publication'
+import Publication, { IPublication } from '../../models/publication.model'
 
 
-export const createPublicationService = async (Topic: String, CategoryId: String, Detail: Array<IPublication>) => {
-    const numPublication = await numb();
+export const createPublicationService = async (topic: String, categoryId: String, detail: Array<IPublication>) => {
+    const numberPublication = await numb();
     try {
-        const existPublication = await Publication.findOne({ Topic: Topic })
+        const existPublication = await Publication.findOne({ topic: topic })
         if (existPublication) {
             throw new Error('The collection could not be inserted because the topic already exists.')
         }
     } catch (error: any) {
-        throw new Error(`${error.message}`)
+        throw new Error(`${error.message}`);
     }
     const Post = new Publication({
-        num_Publication: numPublication,
-        Topic: Topic,
-        CategoryId: CategoryId,
-        Detail: Detail,
+        numberPublication: numberPublication,
+        topic: topic,
+        categoryId: categoryId,
+        detail: detail
     })
     try {
         const savedPublication = await Post.save()

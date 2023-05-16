@@ -1,9 +1,7 @@
 #dependencies
 /node_modules
-.vscode
 #environment
 .env
-
 #js
 /js
 

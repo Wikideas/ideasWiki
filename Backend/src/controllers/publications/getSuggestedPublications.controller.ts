@@ -2,9 +2,9 @@ import { Response, Request } from 'express';
 import { getSuggestedPublicationsService } from '../../services/publications/getSuggestedPublications.service';
 
 export const getSuggestedPublicationsController = async (req: Request, res: Response) => {
-    const { numSuggestedPublicationsIn } = req.params;
+    const { numberSuggestedPublicationsIn } = req.params;
     try {
-        const suggestedPublications = await getSuggestedPublicationsService(numSuggestedPublicationsIn);
+        const suggestedPublications = await getSuggestedPublicationsService(numberSuggestedPublicationsIn);
         res.status(200).json({
             suggestedPublications
         });

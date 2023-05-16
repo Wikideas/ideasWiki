@@ -1,11 +1,11 @@
-import Publication, { IPublication } from "../../models/publication";
+import Publication, { IPublication } from '../../models/publication.model';
 
-export const editPublicationService = async (id: String, Topic: String, CategoryId: String, Detail: Array<IPublication>) => {
+export const editPublicationService = async (id: String, topic: String, categoryId: String, detail: Array<IPublication>) => {
     try {
         const editedPublication = await Publication.updateOne({ _id: id }, {
-            Topic: Topic,
-            Category: CategoryId,
-            Detail: Detail,
+            topic: topic,
+            categoryId: categoryId,
+            detail: detail,
         })
         return editedPublication;
     } catch (error) {

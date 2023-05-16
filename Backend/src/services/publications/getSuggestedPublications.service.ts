@@ -1,12 +1,12 @@
-import Publication from '../../models/publication';
+import Publication from '../../models/publication.model';
 import { numb } from '../../utils/countDocs';
 
-export const getSuggestedPublicationsService = async (numSuggestedPublicationsIn: string) => {
+export const getSuggestedPublicationsService = async (numberSuggestedPublicationsIn: string) => {
     const numPublicationsExist = await numb();
     let indexes: number[] = [];
 
     const getIndexes = async () => {
-        for (let i = 0; i < Number(numSuggestedPublicationsIn); i++) {
+        for (let i = 0; i < Number(numberSuggestedPublicationsIn); i++) {
             let randomNumber = Math.floor(Math.random() * Number(numPublicationsExist));
             if (!indexes.includes(randomNumber)) {
                 indexes.push(randomNumber)

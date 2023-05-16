@@ -1,4 +1,4 @@
-import SectionImage from "../../models/sectionImage";
+import SectionImage from '../../models/sectionImage.model';
 
 export const getSectionImagesService = async () => {
     try {

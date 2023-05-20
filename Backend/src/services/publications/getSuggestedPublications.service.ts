@@ -1,8 +1,8 @@
 import Publication from '../../models/publication.model';
-import { numb } from '../../utils/countDocs';
+import { numberPublications } from '../../utils/countPublications';
 
 export const getSuggestedPublicationsService = async (numberSuggestedPublicationsIn: string) => {
-    const numPublicationsExist = await numb();
+    const numPublicationsExist = await numberPublications();
     let indexes: number[] = [];
 
     const getIndexes = async () => {
@@ -22,7 +22,7 @@ export const getSuggestedPublicationsService = async (numberSuggestedPublication
     let indexesObtained = await getIndexes();
 
     try {
-        const suggestedPublications = await Publication.find({ num_Publication: { $in: indexesObtained } });
+        const suggestedPublications = await Publication.find({ numberPublication: { $in: indexesObtained } });
         return suggestedPublications;
     } catch (error: any) {
         throw new Error('An error has occurred on the server, please contact the administrator.');

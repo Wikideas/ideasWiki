@@ -1,9 +1,9 @@
-import { numb } from '../../utils/countDocs'
+import { numberPublications } from '../../utils/countPublications'
 import Publication, { IPublication } from '../../models/publication.model'
 
 
 export const createPublicationService = async (topic: String, categoryId: String, detail: Array<IPublication>) => {
-    const numberPublication = await numb();
+    const numberPublication = await numberPublications();
     try {
         const existPublication = await Publication.findOne({ topic: topic })
         if (existPublication) {
@@ -13,7 +13,7 @@ export const createPublicationService = async (topic: String, categoryId: String
         throw new Error(`${error.message}`);
     }
     const Post = new Publication({
-        numberPublication: numberPublication,
+        numberPublication: Number(numberPublication) + 1,
         topic: topic,
         categoryId: categoryId,
         detail: detail

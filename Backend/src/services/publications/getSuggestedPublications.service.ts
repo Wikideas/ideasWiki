@@ -7,12 +7,12 @@ export const getSuggestedPublicationsService = async (numberSuggestedPublication
 
     const getIndexes = async () => {
         for (let i = 0; i < Number(numberSuggestedPublicationsIn); i++) {
-            let randomNumber = Math.floor(Math.random() * Number(numPublicationsExist));
+            let randomNumber = Math.floor(Math.random() * Number(numPublicationsExist)) + 1;
             if (!indexes.includes(randomNumber)) {
                 indexes.push(randomNumber)
             } else {
                 while (indexes.includes(randomNumber)) {
-                    randomNumber = Math.floor(Math.random() * Number(numPublicationsExist));
+                    randomNumber = Math.floor(Math.random() * Number(numPublicationsExist)) + 1;
                 }
                 indexes.push(randomNumber);
             }

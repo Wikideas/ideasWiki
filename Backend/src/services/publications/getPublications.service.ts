@@ -1,16 +1,20 @@
 import Publication from '../../models/publication.model';
+import { IPublication } from '../../models/publication.model';
 
-export const getPublicationsService = async (usePagination: any, from: any, limit: any) => {
+export const getPublicationsService = async (usePagination: string, from: string, limit: string) => {
+    let publications: Array<IPublication> = [];
+    let numberOfPublicationsObtained: number = 0;
     try {
         if (usePagination === 'true') {
-            const publications = await Publication.find()
+            publications = await Publication.find()
                 .skip(Number(from))
                 .limit(Number(limit));
-            return publications;
+            numberOfPublicationsObtained = publications.length;
         } else {
-            const publications = await Publication.find();
-            return publications;
+            publications = await Publication.find();
+            numberOfPublicationsObtained = publications.length;
         }
+        return [publications, numberOfPublicationsObtained];
     } catch (error) {
         throw new Error('An error occurred while trying to get the publications.');
     }

@@ -12,9 +12,9 @@ const Carousel = () => {
   //console.log(category);
 
  
-  const { loading, data: category } = useApiCategory(`https://serviceone.onrender.com/apiWikiIdeasV1d/getCategory`)
-  console.log(loading)
-  console.log(category)
+  const { loading, data: category } = useApiCategory(`https://serviceone.onrender.com/api-wikideas/categories`)
+ /*  console.log(loading)
+  console.log(category) */
 
   //Medidas para el carousel
     const [width, setWidth] = useState({right:0, left:-770});

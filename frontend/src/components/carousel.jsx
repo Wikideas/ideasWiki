@@ -3,8 +3,8 @@ import "../styles/carousel.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useApiCategory } from "../hooks/useApiCategory";
-import LoaderDisenio from "../components/Loader/LoaderDisenio"; 
-import Loader from "../components/Loader/Loader"
+import LoaderDisenio from "./Loader/LoaderDisenio"; 
+import Loader from "./Loader/Loader"
 
 const Carousel = () => {
   //Funcion para cambio de estado

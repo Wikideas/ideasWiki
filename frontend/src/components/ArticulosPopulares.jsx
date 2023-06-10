@@ -10,7 +10,7 @@ const ArticulosPopulares = () => {
   useEffect(() => {
     const obtenerDatos = async () => {
       const url =
-        "https://serviceone.onrender.com/apiWikiIdeasV1d/getSuggestedPublications/15";
+        "https://serviceone.onrender.com/api-wiki-ideas/suggested-publications/10";
       const result = await axios.get(url).catch((error) => {
         console.log(error);
       });

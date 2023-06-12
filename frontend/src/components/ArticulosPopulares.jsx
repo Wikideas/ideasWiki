@@ -10,19 +10,19 @@ const ArticulosPopulares = () => {
   useEffect(() => {
     const obtenerDatos = async () => {
       const url =
-        "https://serviceone.onrender.com/apiWikiIdeasV1d/getSuggestedPublications/15";
+        "https://serviceone.onrender.com/api-wikideas/suggested-publications/10";
       const result = await axios.get(url).catch((error) => {
         console.log(error);
       });
-      console.log(result.data.suggestedPublications); //Probando
+      // console.log(result.data.suggestedPublications); //Probando
 
       setData(result.data.suggestedPublications);
     };
     obtenerDatos();
   }, []);
 
-  console.log(data, "prueba");
-
+/*   console.log(data, "prueba");
+ */
   //Medidas para el carousel
   const [width, setWidth] = useState({ right: 0, left: -770 });
 

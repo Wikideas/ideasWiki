@@ -3,8 +3,8 @@ import "../styles/carousel.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useApiCategory } from "../hooks/useApiCategory";
-import LoaderDisenio from "../components/Loader/LoaderDisenio"; 
-import Loader from "../components/Loader/Loader"
+import LoaderDisenio from "./Loader/LoaderDisenio"; 
+import Loader from "./Loader/Loader"
 
 const Carousel = () => {
   //Funcion para cambio de estado
@@ -12,9 +12,9 @@ const Carousel = () => {
   //console.log(category);
 
  
-  const { loading, data: category } = useApiCategory(`https://serviceone.onrender.com/apiWikiIdeasV1d/getCategory`)
-  console.log(loading)
-  console.log(category)
+  const { loading, data: category } = useApiCategory(`https://serviceone.onrender.com/api-wikideas/categories`)
+ /*  console.log(loading)
+  console.log(category) */
 
   //Medidas para el carousel
     const [width, setWidth] = useState({right:0, left:-770});

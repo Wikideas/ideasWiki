@@ -16,7 +16,7 @@ import homeRouter from './src/routes/home.routes';
 mongoose.set('strictQuery', true);
 
 export const app = express();
-const root: string = '/api-wiki-ideas/';
+const root: string = '/api-wikideas/';
 const MONGODB_URI: any = process.env.MONGODB_URI || 5000;
 
 //Middlewares

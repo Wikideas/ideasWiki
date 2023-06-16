@@ -2,12 +2,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 
-export const useApiCategory = (urlLink, arr = []) => {
+export const usePublicationsGet = (urlLink, arr = []) => {
 
     
     const [data, setData] = useState([""]);
-    console.log('dataCategorias', data)
+    console.log('data', data)
     const [loading, setLoading] = useState(true);
+    
     
     useEffect(() => {
         setLoading(true)
@@ -18,11 +19,16 @@ export const useApiCategory = (urlLink, arr = []) => {
           const result = await axios.get(url).catch((error) => {
             console.log(error);
           });
-         /*  console.log(result.data.data[0].nameCategory); */
+         //  console.log(result.data.data[0].nameCategory); 
+         console.log('publications', result.data.publications)
     
           // se corrige a data.categories
-          setData(result.data.categories);
-          setLoading(false)
+        //  setData(result.data.categories);
+
+
+       setData(result.data.publications)
+        setLoading(false);
+
         };
         obtenerCategory();
       }, arr );
@@ -30,5 +36,6 @@ export const useApiCategory = (urlLink, arr = []) => {
     /*   console.log(category, "category"); */
 
     return ({data,
-            loading })
+            loading,
+             })
 }

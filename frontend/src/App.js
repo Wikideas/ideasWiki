@@ -15,6 +15,7 @@ import Search from './pages/Search';
 import Categorias from './pages/Categorias';
 import Footer from './components/Footer';
 import CrearArticuloNew from './pages/CrearArticuloNew';
+import ItemListId from './components/ItemListId/ItemListId';
 
 
 function App() {
@@ -30,10 +31,8 @@ function App() {
             <Route exact path='/sobreNosotros' element={<SobreNosotros />} />
             <Route exact path='/configuracion' element={<Configuracion />} />
 
-           {/*  <Route exact path='/articulo' element={<Articulo/>} />  */}
-
-          {/*   <Route exact path='/articulo' element={<Articulo/>} />  */}
             <Route exact path='/articulos' element={<Articulos/>} />  
+             <Route exact path='/articulos/:categoryId' element={<ItemListId/>}/>
 
             <Route exact path='/search' element={<Search />} />
             {/* <Route exact path='/categorias' element={<Categorias />} /> */}
@@ -43,9 +42,13 @@ function App() {
 
         <Footer />
     </BrowserRouter>
+
    
   );
+
+
 }
+
 
 
 export default App;

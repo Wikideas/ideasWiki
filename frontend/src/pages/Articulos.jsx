@@ -4,12 +4,21 @@ import "../styles/articulosMediasQueries.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import TemasRelacionados from "./TemasRelacionados";
+import { usePublicationsGet } from "../hooks/usePublicationsGet";
+import { useParams } from "react-router-dom";
 
  {/*   <Box sx={{ display: 'flex' }}>
 <CircularProgress />
 </Box>  */}
 
 function Articulos() {
+
+  /* llamado a "publications" */
+
+  const { data: publications } = usePublicationsGet('https://serviceone.onrender.com/api-wikideas/publications')
+  console.log(publications)
+
+
   const [loading, setLoading] = useState(false);
   const paginaRef = useRef(null);
   const [editable, setEditable] = useState(false);
@@ -115,7 +124,7 @@ function Articulos() {
                 </p>
               </div>
             </div>
-          </section>
+          </section>  {/* fin cuerpo2 */}
 
           <section className="cuerpo3">
             <div className="row">

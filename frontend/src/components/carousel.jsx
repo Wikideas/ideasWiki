@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useRef} from "react";
 import "../styles/carousel.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -7,14 +7,37 @@ import LoaderDisenio from "./Loader/LoaderDisenio";
 import Loader from "./Loader/Loader"
 
 const Carousel = () => {
-  //Funcion para cambio de estado
- /*  const [category, setCategory] = useState([""]);  */
-  //console.log(category);
+ 
 
  
   const { loading, data: category } = useApiCategory(`https://serviceone.onrender.com/api-wikideas/categories`)
- /*  console.log(loading)
-  console.log(category) */
+
+
+  /* funcion para manejo de arrastre */
+  const sliderRef = useRef(null)
+  const [isDragging, setIsDragging] = useState(false);
+  console.log('isDragging', isDragging)
+
+  const handleDragStart = () => {
+    setIsDragging(true)
+  }
+
+  const handleDragEnd = () => {
+    setIsDragging(false)
+  }
+
+  const handleCategoryClick = (event) => {
+    if (isDragging) {
+      event.stopPropagation()
+    }
+  };
+
+  const handleSliderClick = () => {
+    sliderRef.current.style.pointerEvent = "none";
+    setTimeout(() => {
+      sliderRef.current.style.pointerEvent = "auto";
+    }, 500)
+  }
 
   //Medidas para el carousel
     const [width, setWidth] = useState({right:0, left:-770});
@@ -76,12 +99,24 @@ const Carousel = () => {
           className="slider"
           drag="x"
           dragConstraints={width} 
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+          onClick={handleSliderClick}
+          ref={sliderRef}
         >
           {/* contenedor div para las category */}
           {category.map((categorias) => {
             return (
               <motion.div className="cont-item">
-                <p key={category._id}>{categorias.nameCategory}</p>
+                <Link 
+                 to= {`/articulos/${categorias._id}`} 
+                 className="p" 
+                 key={category._id}
+                 onClick={() => {
+                  handleCategoryClick()
+                 }}>
+                 {categorias.nameCategory}
+                 </Link>
               </motion.div>
             );
           })}

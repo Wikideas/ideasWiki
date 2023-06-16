@@ -9,6 +9,7 @@ import "../styles/Inicio.css";
 import Carousel from "../components/carousel";
 import CrearArticuloNew from './CrearArticuloNew';
 /* import CrearArticulo from './CrearArticulo'; */
+import CarouselCrearArticulo from '../components/CarouselCrearArticulo';
 
 
 
@@ -47,10 +48,12 @@ function Inicio() {
           </div>
         </div>
       </MediaQuery>
-      <Carousel/>
+      <CarouselCrearArticulo/>
+   {/*    <Carousel/> */}
       <ArticulosRecientes/>
       <ArticulosPopulares/> 
-      <CrearArticuloNew/>
+      {/* <CrearArticuloNew/> */}
+      
     </div>
     )}
   </>

@@ -6,12 +6,12 @@ export const getPublicationsService = async (usePagination: string, from: string
     let numberOfPublicationsObtained: number = 0;
     try {
         if (usePagination === 'true') {
-            publications = await Publication.find()
+            publications = await Publication.find({ active: true })
                 .skip(Number(from))
                 .limit(Number(limit));
             numberOfPublicationsObtained = publications.length;
         } else {
-            publications = await Publication.find();
+            publications = await Publication.find({ active: true });
             numberOfPublicationsObtained = publications.length;
         }
         return [publications, numberOfPublicationsObtained];

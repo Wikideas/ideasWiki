@@ -1,6 +1,8 @@
-import Category from '../../models/category.model'
+import Category from '../../models/category.model';
+import { collectionsNumber } from '../../utils/countCollections';
 
 export const createCategoryService = async (namecategory: string) => {
+    const numberCategory = await collectionsNumber(Category);
     try {
         const existCategory = await Category.findOne({ nameCategory: namecategory })
         if (existCategory) {
@@ -9,7 +11,11 @@ export const createCategoryService = async (namecategory: string) => {
     } catch (error: any) {
         throw new Error(`${error.message}`)
     }
-    const categoryToInsert = new Category({ nameCategory: namecategory })
+    const categoryToInsert = new Category({
+        categoryId: Number(numberCategory) + 1,
+        nameCategory: namecategory,
+        active: true
+    })
     try {
         const savedCategory = await categoryToInsert.save()
         return savedCategory

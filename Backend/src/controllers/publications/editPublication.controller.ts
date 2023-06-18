@@ -2,10 +2,10 @@ import { Request, Response } from 'express';
 import { editPublicationService } from '../../services/publications/editPublication.service';
 
 export const editPublicationController = async (req: Request, res: Response) => {
-    const { id } = req.params;
+    const { publicationId } = req.params;
     const { topic, categoryId, detail } = req.body;
     try {
-        const editedPublication = await editPublicationService(id, topic, categoryId, detail);
+        const editedPublication = await editPublicationService(publicationId, topic, categoryId, detail);
         if (editedPublication.matchedCount == 0) {
             return res.status(404).json({
                 message: 'No matches found for the id provided.'

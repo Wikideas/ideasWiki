@@ -4,7 +4,7 @@ import { createPublicationController } from '../controllers/publications/createP
 import { editPublicationController } from '../controllers/publications/editPublication.controller';
 import { checking } from '../middlewares/checking';
 import { getPublicationsByStringController } from '../controllers/publications/getPublicationsByString.controller';
-import { getPublicationByNumberController } from '../controllers/publications/getPublicationByNumber.controller';
+import { getPublicationByIdController } from '../controllers/publications/getPublicationById.controller';
 import { getPublicationByTopicController } from '../controllers/publications/getPublicationsByTopic.controller';
 import { getPublicationsByIdCategoryController } from '../controllers/publications/getPublicationsByIdCategory.controller';
 import { getLastPublicationController } from '../controllers/publications/getLastPublication.controller';
@@ -20,10 +20,10 @@ router.get('/publications', getPublicationsController);
 router.get('/last-publication', getLastPublicationController);
 router.get('/suggested-publications/:numberSuggestedPublicationsIn', getSuggestedPublicationsController);
 router.get('/publications-by-string/:string', getPublicationsByStringController);
-router.get('/publication-by-number/:numberPublication', getPublicationByNumberController);
+router.get('/publication-by-id-publication/:publicationId', getPublicationByIdController);
 router.get('/publication-by-topic/:topic', getPublicationByTopicController);
-router.get('/publications-by-id-category/:id', getPublicationsByIdCategoryController);
+router.get('/publications-by-id-category/:categoryId', getPublicationsByIdCategoryController);
 router.post('/publications', createPublicationController);
-router.put('/publications/:id', checking, editPublicationController);
+router.put('/publications/:publicationId', checking, editPublicationController);
 
 export default router;

@@ -1,8 +1,8 @@
 import SectionImage from '../../models/sectionImage.model';
 
-export const getSectionImageByIdService = async (id: string) => {
+export const getSectionImageByIdService = async (sectionImageId: string) => {
     try {
-        const sectionImage = await SectionImage.findById(id);
+        const sectionImage = await SectionImage.findOne({ sectionImageId, active: true });
         return sectionImage;
     } catch (error) {
         console.error(error);

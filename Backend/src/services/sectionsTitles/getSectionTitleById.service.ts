@@ -1,8 +1,8 @@
 import SectionTitle from '../../models/sectionTitle.model';
 
-export const getSectionTitleByIdService = async (id: string) => {
+export const getSectionTitleByIdService = async (sectionTitleId: string) => {
     try {
-        const sectionTitle = await SectionTitle.findById(id);
+        const sectionTitle = await SectionTitle.findOne({ sectionTitleId });
         return sectionTitle;
     } catch (error) {
         console.error(error);

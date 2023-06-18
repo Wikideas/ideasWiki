@@ -1,8 +1,9 @@
 import SectionImage from '../../models/sectionImage.model';
-import { ISectionImage } from '../../models/sectionImage.model';
+import { collectionsNumber } from '../../utils/countCollections';
 const cloudinary = require('../../config/cloudinary.config')
 
 export const createSectionImageService = async (sectionImage: string, cloudinaryImageId: string) => {
+    const numberSectionImage = await collectionsNumber(SectionImage);
     try {
         const existSectionImage = await SectionImage.findOne({ sectionImage: sectionImage })
         if (existSectionImage) {
@@ -11,7 +12,12 @@ export const createSectionImageService = async (sectionImage: string, cloudinary
     } catch (error: any) {
         throw new Error(`${error.message}`)
     }
-    const sectionImageToInsert = new SectionImage({ sectionImage: sectionImage, cloudinaryImageId: cloudinaryImageId })
+    const sectionImageToInsert = new SectionImage({
+        sectionImageId: Number(numberSectionImage) + 1,
+        sectionImage: sectionImage,
+        cloudinaryImageId: cloudinaryImageId,
+        active: true
+    })
     try {
         const savedsectionImage = await sectionImageToInsert.save()
         return savedsectionImage

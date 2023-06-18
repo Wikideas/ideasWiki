@@ -2,7 +2,7 @@ import Category from '../../models/category.model';
 
 export const getCategoriesService = async () => {
     try {
-        const categories = await Category.find();
+        const categories = await Category.find({ active: true });
         return categories;
     } catch (error) {
         throw new Error('An error occurred while trying to get the categories.');

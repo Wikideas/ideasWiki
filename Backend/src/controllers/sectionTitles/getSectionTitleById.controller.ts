@@ -2,9 +2,9 @@ import { Request, Response } from 'express';
 import { getSectionTitleByIdService } from '../../services/sectionsTitles/getSectionTitleById.service';
 
 export const getSectionTitleByIdController = async (req: Request, res: Response) => {
-    const { id } = req.params;
+    const { sectionTitleId } = req.params;
     try {
-        const sectionTitleRetrieved = await getSectionTitleByIdService(id);
+        const sectionTitleRetrieved = await getSectionTitleByIdService(sectionTitleId);
         res.status(200).json({
             section: sectionTitleRetrieved
         })

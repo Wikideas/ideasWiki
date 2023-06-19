@@ -2,9 +2,9 @@ import { Request, Response } from 'express';
 import { getPublicationsByIdCategoryservice } from '../../services/publications/getPublicationsByIdCategory.service';
 
 export const getPublicationsByIdCategoryController = async (req: Request, res: Response) => {
-    const { id } = req.params;
+    const { categoryId } = req.params;
     try {
-        const publicationsRetrieved = await getPublicationsByIdCategoryservice(id);
+        const publicationsRetrieved = await getPublicationsByIdCategoryservice(categoryId);
         res.status(200).json(publicationsRetrieved);
     } catch (error: any) {
         res.status(500).json({ error: `${error.message}` });

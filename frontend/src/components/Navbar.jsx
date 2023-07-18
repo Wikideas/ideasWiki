@@ -7,10 +7,12 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import '../styles/Navbar.css';
 import BarraDeBusqueda from './BarraDeBusqueda';
+import SunMoon from '../components/compartidos/SunMoon';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
-  const { theme } = useTheme();
+  const { theme, toggleTheme, themeName } = useTheme();
+
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -66,6 +68,8 @@ function Navbar() {
         <MediaQuery minDeviceWidth={768}>
           <div className='nav_container--rigth'>
             <BarraDeBusqueda />
+            
+            <div onClick={toggleTheme} className='icon-container'><SunMoon /> </div> 
             <button className="btnCrearArticulo" onClick={handleClick}> Crear artículo </button>
             <Link to="/sobreNosotros" className="btnSobreNosotros" >Sobre Nosotros</Link>
           </div>

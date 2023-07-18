@@ -38,11 +38,16 @@
   }
   
   
-  /* 
-       NO CAROUSEL
-     
-    */
+  /* NO CAROUSEL */
   
+  .title-cat {
+      display: flex;
+      justify-content: center;
+      font-weight: 800;
+      margin: 2rem 0 5rem;
+      font-size: 30px;
+    }
+
   .contenedor-NoCarousel {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -53,18 +58,20 @@
       ". . ."
       ". . ."
       ". . .";
-      justify-items: center;
+    justify-items: center;
+    margin-inline: 10rem;
+
   }
   
   .contenedor-NoCarousel .item{
-      border-style: groove;
-      width: 26rem;
-      display: flex;
-      text-align: center;
-      align-items: center;
-      justify-content: space-evenly;
-      font-weight: 400;
-      background-color: #c1c0c0
+    border-style: none;
+    width: 26rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 400;
   }
   
   .contenedor-NoCarousel .p, .contenedor-NoCarousel a {

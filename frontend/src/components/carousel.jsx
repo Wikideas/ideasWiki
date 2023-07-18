@@ -127,11 +127,13 @@ const Carousel = () => {
   
 
       <div className="contenedor-NoCarousel">
-        {category.map((categorias) => {
+      {category.map((categorias) => {
           return (
-            <div className="item">
-              <Link to={`/categorias/${categorias.nameCategory}/${categorias._id}`} key={category._id}  >{categorias.nameCategory}</Link>
-              {/* <p key={category._id}>{categorias.nameCategory}</p> */}
+            <div className="item"
+              key={categorias.categoryId}>
+              <Link to={`/categorias/${categorias.nameCategory}/${categorias.categoryId}`}>              
+              {categorias.nameCategory}
+              </Link>
             </div>
           );
         })}

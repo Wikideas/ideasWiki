@@ -7,7 +7,6 @@ import ArticulosRecientes from '../components/ArticulosRecientes';
 import ArticulosPopulares from '../components/ArticulosPopulares';
 import "../styles/Inicio.css";
 import Carousel from "../components/carousel";
-import CrearArticuloNew from './CrearArticuloNew';
 /* import CrearArticulo from './CrearArticulo'; */
 
 
@@ -50,7 +49,7 @@ function Inicio() {
       <Carousel/>
       <ArticulosRecientes/>
       <ArticulosPopulares/> 
-      <CrearArticuloNew/>
+      {/* <CrearArticuloNew/> */}
     </div>
     )}
   </>

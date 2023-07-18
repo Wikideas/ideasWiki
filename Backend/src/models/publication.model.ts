@@ -2,16 +2,17 @@ import mongoose from 'mongoose';
 import monggose, { Schema, Document } from 'mongoose';
 
 export interface IPublication extends Document {
-    topic: string,
-    numberPublication: string
-    categoryId: mongoose.Schema.Types.ObjectId
-    detail: Array<mongoose.Schema.Types.ObjectId>
+    topic: string
+    publicationId: string
+    categoryId: string
+    detail: Array<string>
     createdAt: Date
     updatedAt: Date
+    active: boolean
 }
 
 const publicationSchema = new Schema<IPublication>({
-    numberPublication: {
+    publicationId: {
         type: String,
         unique: true
     },
@@ -20,12 +21,12 @@ const publicationSchema = new Schema<IPublication>({
         required: true
     },
     categoryId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'categoryPublication',
         required: true
     },
     detail: {
-        type: [mongoose.Schema.Types.ObjectId],
+        type: [String],
         ref: 'section',
         required: true
     },
@@ -36,6 +37,9 @@ const publicationSchema = new Schema<IPublication>({
     updatedAt: {
         type: Date,
         default: Date.now
+    },
+    active: {
+        type: Boolean
     }
 })
 

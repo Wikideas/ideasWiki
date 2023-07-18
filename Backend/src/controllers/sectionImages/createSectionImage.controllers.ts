@@ -5,17 +5,17 @@ const fs = require('fs/promises');
 
 export const createSectionImageController = async (req: Request, res: Response) => {
     let { sectionImage } = (req as any).files;
-    let cloudinaryImageId : string|any; 
+    let cloudinaryImageId: string | any;
     try {
 
         const imageTemp = await uploadImage(sectionImage.tempFilePath);
         const { secure_url: url, public_id: idImg } = imageTemp;
         sectionImage = url;
-        cloudinaryImageId= idImg;
+        cloudinaryImageId = idImg;
 
         await fs.rmdir('./tmp', { recursive: true });
 
-        const imageData = await createSectionImageService(sectionImage, cloudinaryImageId )
+        const imageData = await createSectionImageService(sectionImage, cloudinaryImageId)
         res.status(201).json({
             ok: 'Section image successfully created',
             data: imageData

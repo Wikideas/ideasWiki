@@ -1,7 +1,8 @@
 import SectionTitle from '../../models/sectionTitle.model';
-import { ISectionTitle } from '../../models/sectionTitle.model';
+import { collectionsNumber } from '../../utils/countCollections';
 
 export const createSectionTitleService = async (sectionTitle: string) => {
+    const numberSectionTitle = await collectionsNumber(SectionTitle);
     try {
         const existSectionTitle = await SectionTitle.findOne({ sectionTitle: sectionTitle })
         if (existSectionTitle) {
@@ -10,7 +11,11 @@ export const createSectionTitleService = async (sectionTitle: string) => {
     } catch (error: any) {
         throw new Error(`${error.message}`)
     }
-    const sectionTitleToInsert = new SectionTitle({ sectionTitle: sectionTitle })
+    const sectionTitleToInsert = new SectionTitle({
+        sectionTitleId: Number(numberSectionTitle) + 1,
+        sectionTitle: sectionTitle,
+        active: true
+    })
     try {
         const savedsectionTitle = await sectionTitleToInsert.save()
         return savedsectionTitle

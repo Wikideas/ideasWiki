@@ -1,16 +1,22 @@
 import mongoose, { Schema, Document } from 'mongoose'
 
 export interface ISection extends Document {
-    sectionTitleId: mongoose.Schema.Types.ObjectId,
-    sectionDetail: string,
-    sectionImageId: mongoose.Schema.Types.ObjectId,
-    createdAt: Date;
-    updatedAt: Date;
+    sectionId: string
+    sectionTitleId: string
+    sectionDetail: string
+    sectionImageId: string
+    createdAt: Date
+    updatedAt: Date
+    active: boolean
 }
 
 const sectionSchema = new Schema<ISection>({
+    sectionId: {
+        type: String,
+        unique: true
+    },
     sectionTitleId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'sectionTitle',
         required: true
     },
@@ -19,7 +25,7 @@ const sectionSchema = new Schema<ISection>({
         required: true
     },
     sectionImageId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'sectionImage',
     },
     createdAt: {
@@ -29,6 +35,9 @@ const sectionSchema = new Schema<ISection>({
     updatedAt: {
         type: Date,
         default: Date.now
+    },
+    active: {
+        type: Boolean
     }
 })
 
@@ -45,5 +54,5 @@ sectionSchema.pre('updateOne', function (next) {
     next();
 });
 
-const Section = mongoose.model<ISection>('Section', sectionSchema)
+const Section = mongoose.model<ISection>('section', sectionSchema)
 export default Section

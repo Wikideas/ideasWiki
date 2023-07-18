@@ -4,12 +4,11 @@ import Spinner from '../components/Spinner';
 import MediaQuery from 'react-responsive';
 import BarraDeBusqueda from '../components/BarraDeBusqueda';
 import ArticulosRecientes from '../components/ArticulosRecientes';
+
+import Carousel from '../components/carousel';
 import ArticulosPopulares from '../components/ArticulosPopulares';
+
 import "../styles/Inicio.css";
-import Carousel from "../components/carousel";
-import CrearArticuloNew from './CrearArticuloNew';
-/* import CrearArticulo from './CrearArticulo'; */
-import CarouselCrearArticulo from '../components/CarouselCrearArticulo';
 
 
 
@@ -48,8 +47,7 @@ function Inicio() {
           </div>
         </div>
       </MediaQuery>
-      <CarouselCrearArticulo/>
-   {/*    <Carousel/> */}
+       <Carousel/>
       <ArticulosRecientes/>
       <ArticulosPopulares/> 
       {/* <CrearArticuloNew/> */}

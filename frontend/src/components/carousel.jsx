@@ -1,8 +1,4 @@
-
-import React, { useState, useEffect, useRef} from "react";
-
 import React, { useState, useEffect } from "react";
-0
 import "../styles/carousel.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -10,45 +6,10 @@ import { useApiCategory } from "../hooks/useApiCategory";
 import LoaderDisenio from "./Loader/LoaderDisenio";
 import Loader from "./Loader/Loader";
 
-
-const Carousel = () => {
- 
-
- 
-  const { loading, data: category } = useApiCategory(`https://serviceone.onrender.com/api-wikideas/categories`)
-
-
-  /* funcion para manejo de arrastre */
-  const sliderRef = useRef(null)
-  const [isDragging, setIsDragging] = useState(false);
-  console.log('isDragging', isDragging)
-
-  const handleDragStart = () => {
-    setIsDragging(true)
-  }
-
-  const handleDragEnd = () => {
-    setIsDragging(false)
-  }
-
-  const handleCategoryClick = (event) => {
-    if (isDragging) {
-      event.stopPropagation()
-    }
-  };
-
-  const handleSliderClick = () => {
-    sliderRef.current.style.pointerEvent = "none";
-    setTimeout(() => {
-      sliderRef.current.style.pointerEvent = "auto";
-    }, 500)
-  }
-
 import { backendImage, datascienceImage, developerImage, diseñouxuiImage, frontendImage, programasIAImage, QAtestingmanualImage } from "../styles/assets/categoriesImg";
 
 const Carousel = () => {
   const { loading, data: categories } = useApiCategory("https://serviceone.onrender.com/api-wikideas/categories");
-
 
   //Medidas para el carousel
   const [width, setWidth] = useState({ right: 0, left: -770 });
@@ -104,33 +65,6 @@ const Carousel = () => {
       {loading ? (
         <Loader cargando={LoaderDisenio} />
       ) : (
-
-        <motion.div className="slider_container" >{/*  ref={slider_container} */}
-        {/*div que contendra las propiedades y funcionalida
-        des de motion*/}
-        <motion.div
-          className="slider"
-          drag="x"
-          dragConstraints={width} 
-          onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
-          onClick={handleSliderClick}
-          ref={sliderRef}
-        >
-          {/* contenedor div para las category */}
-          {category.map((categorias) => {
-            return (
-              <motion.div className="cont-item">
-                <Link 
-                 to= {`/articulos/${categorias._id}`} 
-                 className="p" 
-                 key={category._id}
-                 onClick={() => {
-                  handleCategoryClick()
-                 }}>
-                 {categorias.nameCategory}
-                 </Link>
-
         <motion.div className="slider_container">
           {/* Contenedor div para las categorías */}
           <motion.div className="slider" drag="x" dragConstraints={width}>
@@ -141,7 +75,6 @@ const Carousel = () => {
                   alt={categoria.nameCategory}
                 />
                 <p>{categoria.nameCategory}</p>
-
               </motion.div>
             ))}
           </motion.div>
@@ -149,18 +82,6 @@ const Carousel = () => {
       )}
 
       <div className="contenedor-NoCarousel">
-
-      {category.map((categorias) => {
-          return (
-            <div className="item"
-              key={categorias.categoryId}>
-              <Link to={`/categorias/${categorias.nameCategory}/${categorias.categoryId}`}>              
-              {categorias.nameCategory}
-              </Link>
-            </div>
-          );
-        })}
-
         {categories.map((categoria, index) => (
           <div className="item" key={index}>
             <img
@@ -172,7 +93,6 @@ const Carousel = () => {
             </Link>
           </div>
         ))}
-
       </div>
     </div>
   );

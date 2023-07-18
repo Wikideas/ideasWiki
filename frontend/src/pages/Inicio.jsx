@@ -12,11 +12,11 @@ import ArticulosPopulares from '../components/ArticulosPopulares';
 
 import "../styles/Inicio.css";
 
+/* import CrearArticulo from './CrearArticulo'; */
 
 
 
 
-import Carousel from "../components/carousel";
 
 
 function Inicio() {
@@ -60,16 +60,10 @@ function Inicio() {
         </div>
       </MediaQuery>
 
-       <Carousel/>
-      <ArticulosRecientes/>
-      <ArticulosPopulares/> 
+        <Carousel/> 
+       {/* <ArticulosRecientes/>  */}
+       <ArticulosPopulares/>  
       {/* <CrearArticuloNew/> */}
-      
-
-      <Carousel/>
-      <ArticulosPopulares/> 
-
-
     </div>
     )}
   </>

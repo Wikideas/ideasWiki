@@ -15,12 +15,16 @@ import Search from './pages/Search';
 import Categorias from './pages/Categorias';
 import Footer from './components/Footer';
 import CrearArticuloNew from './pages/CrearArticuloNew';
+/* import ItemListId from './components/ItemListId/ItemListId'; */
+import ItemListIdArt from './components/ItemListId/ItemListIdArt';
+import { TitleProvider } from './context/TitleContext';
 
 
 function App() {
 
   return (
     <BrowserRouter>
+     <TitleProvider>
         <Navbar />
 
           <Routes>
@@ -30,22 +34,24 @@ function App() {
             <Route exact path='/sobreNosotros' element={<SobreNosotros />} />
             <Route exact path='/configuracion' element={<Configuracion />} />
 
-           {/*  <Route exact path='/articulo' element={<Articulo/>} />  */}
-
-          {/*   <Route exact path='/articulo' element={<Articulo/>} />  */}
             <Route exact path='/articulos' element={<Articulos/>} />  
+             
 
             <Route exact path='/search' element={<Search />} />
             {/* <Route exact path='/categorias' element={<Categorias />} /> */}
-            <Route exact path='/categorias/:nameCategory/:_id' element={<Categorias />} />
+            <Route exact path='/categorias/:nameCategory/:categoryId' element={<Categorias />} />
+            <Route exact path='/articulos/:detail' element={<ItemListIdArt/>} />
             <Route path = '*' element={<NotFound/>}/>
           </Routes>
 
         <Footer />
+        </TitleProvider>
     </BrowserRouter>
    
   );
+
 }
+
 
 
 export default App;

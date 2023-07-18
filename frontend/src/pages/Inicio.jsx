@@ -3,19 +3,13 @@ import { useTheme } from '../context/ThemeProvider';
 import Spinner from '../components/Spinner';
 import MediaQuery from 'react-responsive';
 import BarraDeBusqueda from '../components/BarraDeBusqueda';
-import ArticulosRecientes from '../components/ArticulosRecientes';
 import ArticulosPopulares from '../components/ArticulosPopulares';
 import "../styles/Inicio.css";
 import Carousel from "../components/carousel";
-import CrearArticuloNew from './CrearArticuloNew';
-/* import CrearArticulo from './CrearArticulo'; */
-
-
-
 
 function Inicio() {
   const [isLoading, setIsLoading] = useState(false);
-  const { theme, toggleTheme, themeName } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     setIsLoading(true)
@@ -42,15 +36,20 @@ function Inicio() {
             <h3>Una guía completa y actualizada sobre el mundo. <br /> Explora, aprende  y desarrolla.</h3>
           </div>
           <div className='banner-img'>
-            <p>El modo actual es: "{themeName}"</p>
-            <button onClick={toggleTheme} >Cambiar modo</button>
+            <img
+                  
+                  src={require('../styles/assets/banner-inicio.png')}
+                  alt="inicioImg"
+                  
+                />
+            {/* <p>El modo actual es: "{themeName}"</p>
+            <button onClick={toggleTheme} >Cambiar modo</button> */}
           </div>
         </div>
       </MediaQuery>
       <Carousel/>
-      <ArticulosRecientes/>
       <ArticulosPopulares/> 
-      <CrearArticuloNew/>
+
     </div>
     )}
   </>

@@ -6,6 +6,7 @@ export const useApiCategory = (urlLink, arr = []) => {
 
     
     const [data, setData] = useState([""]);
+    console.log('dataCategorias', data)
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {

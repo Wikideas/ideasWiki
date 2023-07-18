@@ -82,7 +82,7 @@ function BarraDeBusqueda() {
           style={{
             zIndex: 2,
             backgroundColor: "#fff",
-            width: "30%",
+            width: "28%",
             borderRadius: "6px",
             position: "absolute",
             top: "52px",
@@ -109,11 +109,11 @@ function BarraDeBusqueda() {
                       }}
                       style={{
                         backgroundColor: "#fff",
-                        margin: "2px",
                         width: "95%",
                         border: "none",
                         textAlign: "left",
                         cursor: "pointer",
+                        fontSize: "16px"
                       }}
                     >
                       {item.topic}
@@ -125,7 +125,7 @@ function BarraDeBusqueda() {
           )}
         </div>
       </div>
-      <div
+    {/*   <div
         style={{
           position: "relative",
           zIndex: -4,
@@ -135,7 +135,7 @@ function BarraDeBusqueda() {
       >
         <h5>{article.topic}</h5>
         {article.detail}
-      </div>
+      </div> */}
     </>
   );
 }

@@ -13,7 +13,16 @@
     height: 250px;
   } 
 
+  .title-articlePop {
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    margin: 4rem 0 4rem;
+    font-size: 30px;
+  }
+
   .cardContainer {
+    background: #D0E0EB;
     width: 200px;
     height: 250px;
     display: flex;
@@ -21,9 +30,10 @@
     align-items: center;
     justify-content: center;
     margin-left: 10px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     border-radius: 10px;
-  }
+}
+  
   
   .cardImg {
     width: 200px;
@@ -36,7 +46,7 @@
   
   .ContentDiv {
     width: 100%;
-    height: 60vh;
+    height: 27vh;
   }
     
   .buttonContainer {
@@ -48,9 +58,13 @@
       height: auto;
       padding: 0.5em;
       border-radius: 7px;
-      background-color: var(--color-secundario);
+      background-color: var(--color-black2);
       text-decoration: none;
-      color: whitesmoke;
+  }
+
+  .custonspan {
+    color: white;
+    margin: 0;
   }
     
   

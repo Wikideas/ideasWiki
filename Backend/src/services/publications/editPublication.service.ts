@@ -1,8 +1,8 @@
 import Publication, { IPublication } from '../../models/publication.model';
 
-export const editPublicationService = async (id: String, topic: String, categoryId: String, detail: Array<IPublication>) => {
+export const editPublicationService = async (publicationId: String, topic: String, categoryId: String, detail: Array<IPublication>) => {
     try {
-        const editedPublication = await Publication.updateOne({ _id: id }, {
+        const editedPublication = await Publication.updateOne({ publicationId: publicationId }, {
             topic: topic,
             categoryId: categoryId,
             detail: detail,

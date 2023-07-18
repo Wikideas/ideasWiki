@@ -10,19 +10,89 @@ const ArticulosPopulares = () => {
   useEffect(() => {
     const obtenerDatos = async () => {
       const url =
-        "https://serviceone.onrender.com/api-wikideas/suggested-publications/10";
+        "https://serviceone.onrender.com/api-wikideas/suggested-publications/7";
       const result = await axios.get(url).catch((error) => {
         console.log(error);
       });
-      // console.log(result.data.suggestedPublications); //Probando
 
-      setData(result.data.suggestedPublications);
+      // Función para obtener los datos de detalle para cada publicación
+      const getDetailData = async (id) => {
+        const detailUrl = `https://serviceone.onrender.com/api-wikideas/sections/${id}`;
+        const detailResult = await axios.get(detailUrl);
+        return detailResult.data;
+      };
+
+      const getImageData  = async (id) => {
+        const imageEndpoint = `https://serviceone.onrender.com/api-wikideas/section-images/${id}`;
+        const imageResult = await axios.get(imageEndpoint);
+        return imageResult.data;
+      }
+
+      const getSectionTitle  = async (id) => {
+        const titleEndpoint = `https://serviceone.onrender.com/api-wikideas/section-titles/${id}`;
+        const titleResult = await axios.get(titleEndpoint);
+        return titleResult.data;
+      }
+
+      // Obtener las publicaciones
+      const suggestedPublications = result.data.suggestedPublications;
+
+      // Array para almacenar los datos completos de cada publicación
+      const publicationsWithDetail = [];
+
+      // Iterar a través de cada publicación y obtener los datos de detalle
+      for (const publication of suggestedPublications) {
+        const detailIds = publication.detail;
+
+          // Obtener los datos de detalle para cada ID en paralelo
+          const detailPromises = detailIds.map(async (id) => {
+            const detail = await getDetailData(id);
+            return detail;
+          });
+  
+          // Esperar a que todas las solicitudes de detalle se resuelvan
+          const detailData = await Promise.all(detailPromises);
+  
+          // Obtener los datos de imagen para cada detalle en paralelo
+          const imagePromises = detailData.map(async (detail) => {
+            const imageData = await getImageData(detail.section.sectionImageId);
+            return imageData.section;
+          });
+  
+          // Esperar a que todas las solicitudes de imagen se resuelvan
+          const imagesData = await Promise.all(imagePromises);
+
+          const titlePromises = detailData.map(async (detail) => {
+            const titleData = await getSectionTitle(detail.section.sectionTitleId);
+            return titleData.section;
+          });
+  
+          // Esperar a que todas las solicitudes de imagen se resuelvan
+          const sectionTitleData = await Promise.all(titlePromises);
+
+             // Asignar los datos de imagen a cada objeto de detalle correspondiente
+        detailData.forEach((detail, index) => {
+          detail.imagesData = imagesData[index];
+          detail.sectionTitleData = sectionTitleData[index];
+        });
+
+        // Agregar los datos completos de la publicación con los detalles a publicationsWithDetail
+        publicationsWithDetail.push({
+          ...publication,
+          detailData,
+        });
+      }
+
+      // Actualizar el estado con todos los datos completos de las publicaciones
+      setData(publicationsWithDetail);
     };
+    /* `obtenerDatos();` is a function call that is being executed inside the `useEffect` hook. It is
+    responsible for fetching data from an API and updating the state with the retrieved data. */
     obtenerDatos();
   }, []);
+  
 
-/*   console.log(data, "prueba");
- */
+  
   //Medidas para el carousel
   const [width, setWidth] = useState({ right: 0, left: -770 });
 
@@ -61,34 +131,41 @@ const ArticulosPopulares = () => {
 
   return (
     <div className="container pt-3"> {/* Container Global */}
-      <h2>Artículos Populares</h2>
+      <div className='title-articlePop'>Artículos Populares</div>
       <motion.div className="slider_container1"> {/* Contiene el Carousel */}
         <motion.div className="slider1 " drag="x" dragConstraints={width}>
 
-          {data.map((data) => (
-            <motion.div className="cardContainer" > {/* Estilos de cada Card*/}
+          {data.map((publication, index) => (
+            <motion.div className="cardContainer" key={index}> {/* Estilos de cada Card*/}
+            {console.log('publication', publication)}
                 {/* Imagen */}
+                {publication.detailData && publication.detailData[0] ? (
+                <>
                 <img
                   className="cardImg"
-                  src={require("../styles/assets/testimonio-diwght.jpeg")}
+                  src={publication.detailData[0].imagesData.sectionImage}
                   alt="Articulos recientes"
                   
                 />
                 {/* Contenido */}
                 <div className="ContentDiv pt-3">
-                  <h5 className='ms-2'>{data.Topic}</h5>
+                  <h5 className='ms-2'>{publication.topic}</h5>
                   <p className="card-text"> {/* {data.Detail} */}</p> {/* Hay que definir la cantidad de caranteres que lleva cada descripcion */}
                 </div>
                 
                 {/* Boton */}
                   <div className="buttonContainer p-3">
                     <Link to={`/categorias/${data.nameCategory}/${data._id}`} key={data._id} className="buttonStyle1"  >
-                      Ver más
+                      <span className='custonspan' >Ver más</span> 
                     </Link>
                   </div>
+
+          </>
+          ) : (
+            <p>Cargando...</p>
+            )}
             </motion.div>
           ))}
-          
         </motion.div>
       </motion.div>
     </div>

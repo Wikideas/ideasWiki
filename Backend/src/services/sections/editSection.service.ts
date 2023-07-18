@@ -1,8 +1,8 @@
 import Section, { ISection } from '../../models/section.model';
 
-export const editSectionService = async (id: string, sectionTitleId: string, sectionDetail: string, sectionImageId: string) => {
+export const editSectionService = async (sectionId: string, sectionTitleId: string, sectionDetail: string, sectionImageId: string) => {
     try {
-        const editedSection = await Section.updateOne({ _id: id }, {
+        const editedSection = await Section.updateOne({ sectionId }, {
             sectionTitleId: sectionTitleId,
             sectionDetail: sectionDetail,
             sectionImageId: sectionImageId

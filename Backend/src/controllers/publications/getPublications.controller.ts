@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { getPublicationsService } from '../../services/publications/getPublications.service';
-import { numberPublications } from '../../utils/countPublications';
+import { collectionsNumber } from '../../utils/countCollections';
+import Publication from '../../models/publication.model';
 
 export const getPublicationsController = async (req: Request, res: Response) => {
     const { usePagination = 'false', from = '0', limit = '5' } = req.query;
@@ -11,7 +12,7 @@ export const getPublicationsController = async (req: Request, res: Response) => 
                 from.toString(),
                 limit.toString()
             ),
-            numberPublications()
+            collectionsNumber(Publication)
         ]);
         res.status(200).json({
             numberOfPublicationsRendered: numberOfPublicationsRendered,

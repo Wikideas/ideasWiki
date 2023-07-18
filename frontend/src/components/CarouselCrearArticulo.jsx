@@ -62,19 +62,20 @@ const CarouselCrearArticulo = () => {
             {category.map((categoria) => {
               return (
                 <motion.div className="itemCarousel shadow" >
-                        <li 
+                        <Link  
+                                to= {`/articulos/${categoria._id}`}
                                 className="carouselLi text-center " 
                                 onClick={() => handleIdCategory(categoria._id)}
                                 key={categoria._id}
                               >{categoria.nameCategory}
-                        </li>
+                        </Link>
                 </motion.div>
               );
             })}
           </motion.div>
         </motion.div>
       {/* )} */}
-       <p>Id de la categoría {idCategory}</p> 
+      {/*  <p>Id de la categoría {idCategory}</p>  */}
       {/* <div className="contenedor-NoCarousel">
         {category.map((categorias) => {
           return (

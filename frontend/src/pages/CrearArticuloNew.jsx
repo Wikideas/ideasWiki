@@ -239,7 +239,7 @@ const CrearArticuloNew = () => {
         <div className='imgCont'>
           <div {...getRootProps()} className={`upload ${previewImage ? "active" : ""}`}>
             <input {...getInputProps()} />
-                   {previewImage ? (<img src={previewImage} alt="Preview" />) : (
+                    {previewImage ? (<img src={previewImage} alt="Preview" />) : (
                     <div>
                       <i class="bi bi-cloud-arrow-up"></i>
                       <p>Sube una imagen</p>

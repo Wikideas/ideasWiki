@@ -16,3 +16,9 @@
     color: var(--color-primario);
 }
 
+.active{
+    background-color: black !important;
+}
+
+
+

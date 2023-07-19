@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 const ArticulosPopulares = () => {
   const [data, setData] = useState([""]);
+  const [dataLoaded, setDataLoaded] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const obtenerDatos = async () => {
@@ -85,14 +87,25 @@ const ArticulosPopulares = () => {
 
       // Actualizar el estado con todos los datos completos de las publicaciones
       setData(publicationsWithDetail);
+
+      setErrorMessage('');
     };
     /* `obtenerDatos();` is a function call that is being executed inside the `useEffect` hook. It is
     responsible for fetching data from an API and updating the state with the retrieved data. */
     obtenerDatos();
   }, []);
   
+  useEffect(() => {
+    // Set the error message after 15 seconds if data is still not loaded
+    const timer = setTimeout(() => {
+      if (!dataLoaded) {
+        setErrorMessage('No existe idSection en details');
+      }
+    }, 15000);
 
-  
+    return () => clearTimeout(timer);
+  }, [dataLoaded]);
+
   //Medidas para el carousel
   const [width, setWidth] = useState({ right: 0, left: -770 });
 
@@ -133,13 +146,13 @@ const ArticulosPopulares = () => {
     <div className="container pt-3"> {/* Container Global */}
       <div className='title-articlePop'>Artículos Populares</div>
       <motion.div className="slider_container1"> {/* Contiene el Carousel */}
-        <motion.div className="slider1 " drag="x" dragConstraints={width}>
+        <motion.div className="slider1" drag="x" dragConstraints={width}>
 
           {data.map((publication, index) => (
             <motion.div className="cardContainer" key={index}> {/* Estilos de cada Card*/}
             {console.log('publication', publication)}
                 {/* Imagen */}
-                {publication.detailData && publication.detailData[0] ? (
+                {publication.detailData && publication.detailData[0] && publication.detailData[0].imagesData ?  (
                 <>
                 <img
                   className="cardImg"
@@ -150,7 +163,7 @@ const ArticulosPopulares = () => {
                 {/* Contenido */}
                 <div className="ContentDiv pt-3">
                   <h5 className='ms-2'>{publication.topic}</h5>
-                  <p className="card-text"> {/* {data.Detail} */}</p> {/* Hay que definir la cantidad de caranteres que lleva cada descripcion */}
+                  <p className="card-text"> {/* {data.Detail} */}</p> 
                 </div>
                 
                 {/* Boton */}
@@ -159,11 +172,10 @@ const ArticulosPopulares = () => {
                       <span className='custonspan' >Ver más</span> 
                     </Link>
                   </div>
-
           </>
           ) : (
-            <p>Cargando...</p>
-            )}
+                  <p>{errorMessage || "Loading..."}</p>          
+              )}
             </motion.div>
           ))}
         </motion.div>

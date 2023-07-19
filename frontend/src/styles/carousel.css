@@ -72,7 +72,14 @@
     align-items: center;
     justify-content: space-evenly;
     font-weight: 400;
-  }
+/*     overflow: hidden;
+ */  }
+
+  .item:hover{
+    transition:all .3s ease-in-out;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    }
   
   .contenedor-NoCarousel .p, .contenedor-NoCarousel a {
     font-size: 30px;

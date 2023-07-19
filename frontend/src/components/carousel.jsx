@@ -11,7 +11,6 @@ import LoaderDisenio from "./Loader/LoaderDisenio";
 import Loader from "./Loader/Loader";
 import { backendImage, datascienceImage, developerImage, diseñouxuiImage, frontendImage, programasIAImage, QAtestingmanualImage } from "../styles/assets/categoriesImg";
 
-
 const Carousel = () => {
 
   /* llamado de API */
@@ -19,8 +18,8 @@ const Carousel = () => {
   console.log(loading)
   console.log(category)
 
-   // Objeto que mapea nombres de categoría con las imágenes correspondientes
-   const categoryImages = {
+  // Objeto que mapea nombres de categoría con las imágenes correspondientes
+  const categoryImages = {
     1: backendImage,
     2: datascienceImage,
     3: developerImage,
@@ -29,6 +28,7 @@ const Carousel = () => {
     6: programasIAImage,
     7: QAtestingmanualImage,
   };
+
 
 
   return (
@@ -51,10 +51,15 @@ const Carousel = () => {
           
           {category.map((categorias) => {
             return (
-              <motion.div 
-              className="cont-item">
-                <p key={category._id}>{categorias.nameCategory}</p>
+
+              <motion.div className="cont-item">
+                <img
+                  src={categoryImages[categorias.categoryId]}
+                  alt={categorias.nameCategory}
+                />
+                <p>{categorias.nameCategory}</p>
               </motion.div>
+             
             );
           })}
           
@@ -69,6 +74,10 @@ const Carousel = () => {
           return (
             <div className="item"
               key={categorias.categoryId}>
+               <img
+              src={categoryImages[categorias.categoryId]}
+              alt={categorias.nameCategory}
+            />
               <Link to={`/categorias/${categorias.nameCategory}/${categorias.categoryId}`}>
               {categorias.nameCategory}
               </Link>

@@ -1,6 +1,6 @@
 .itemCarousel {
     min-width: 132px;
-    height: 55px;
+    height: auto;
     background-color:var(--color-secundario);
     overflow-x: hidden;
     margin: 5px;
@@ -15,4 +15,10 @@
     font-weight: bold;
     color: var(--color-primario);
 }
+
+.active{
+    background-color: black !important;
+}
+
+
 

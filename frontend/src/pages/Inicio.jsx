@@ -16,7 +16,7 @@ import "../styles/Inicio.css";
 
 
 
-import Carousel from "../components/carousel";
+
 
 
 function Inicio() {

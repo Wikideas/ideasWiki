@@ -27,12 +27,12 @@ try {
 const seedCategories = [
   {
     categoryId: "1",
-    nameCategory: "Programacion",
+    nameCategory: "Frontend",
     active: true
   },
   {
     categoryId: "2",
-    nameCategory: "Estructura de datos",
+    nameCategory: "Backend",
     active: true
   },
   {
@@ -42,22 +42,22 @@ const seedCategories = [
   },
   {
     categoryId: "4",
-    nameCategory: "Testing",
+    nameCategory: "Data Science",
     active: true
   },
   {
     categoryId: "5",
-    nameCategory: "Inteligencia Artificial",
+    nameCategory: "Diseño de sistemas",
     active: true
   },
   {
     categoryId: "6",
-    nameCategory: "Frameworks",
+    nameCategory: "QA Testing",
     active: true
   },
   {
     categoryId: "7",
-    nameCategory: "Arquitectura de sistemas",
+    nameCategory: "Programas / IA",
     active: true
   },
 ]
@@ -240,9 +240,30 @@ const seedSections = [
   },
   {
     sectionId: "9",
-    sectionTitleId: "9",
+    sectionTitleId: "1",
     sectionDetail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     sectionImageId: "9",
+    active: true
+  },
+  {
+    sectionId: "10",
+    sectionTitleId: "2",
+    sectionDetail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    sectionImageId: "10",
+    active: true
+  },
+  {
+    sectionId: "11",
+    sectionTitleId: "3",
+    sectionDetail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    sectionImageId: "11",
+    active: true
+  },
+  {
+    sectionId: "12",
+    sectionTitleId: "4",
+    sectionDetail: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    sectionImageId: "12",
     active: true
   }
 ]
@@ -251,7 +272,7 @@ const seedPublications = [
   {
     publicationId: "1",
     topic: "Arquitectura de sistemas",
-    categoryId: "1",
+    categoryId: "5",
     detail: [
       "1",
       "2",
@@ -284,7 +305,7 @@ const seedPublications = [
   {
     publicationId: "4",
     topic: "CSS Frameworks",
-    categoryId: "2",
+    categoryId: "1",
     detail: [
       "1",
       "2",
@@ -361,7 +382,7 @@ const seedPublications = [
   {
     publicationId: "11",
     topic: "Astro",
-    categoryId: "8",
+    categoryId: "3",
     detail: [
       "4",
       "5",
@@ -372,7 +393,7 @@ const seedPublications = [
   {
     publicationId: "12",
     topic: "Next JS",
-    categoryId: "9",
+    categoryId: "6",
     detail: [
       "7",
       "8",

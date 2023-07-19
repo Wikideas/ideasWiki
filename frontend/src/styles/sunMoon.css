@@ -1,8 +1,18 @@
 .sun {
   width: 2.5rem;
+  border-radius: 50%;
+}
+
+.sun:hover {
+  background: #233F52
 }
 
 .moon {
   width: 2rem;
+  border-radius: 50%;
+}
+
+.moon:hover {
+  background: #D0E0EB
 }
 

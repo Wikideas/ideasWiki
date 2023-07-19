@@ -113,7 +113,8 @@ function BarraDeBusqueda() {
                         border: "none",
                         textAlign: "left",
                         cursor: "pointer",
-                        fontSize: "16px"
+                        fontSize: "16px",
+                        color: "black"
                       }}
                     >
                       {item.topic}

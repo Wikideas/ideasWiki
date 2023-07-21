@@ -5,6 +5,7 @@ import Publication from '../../models/publication.model';
 
 export const getPublicationsController = async (req: Request, res: Response) => {
     const { usePagination = 'false', from = '0', limit = '5' } = req.query;
+    const filter = {};
     try {
         const [[publications, numberOfPublicationsRendered], totalPublications] = await Promise.all([
             getPublicationsService(
@@ -12,7 +13,7 @@ export const getPublicationsController = async (req: Request, res: Response) => 
                 from.toString(),
                 limit.toString()
             ),
-            collectionsNumber(Publication)
+            collectionsNumber(Publication, filter)
         ]);
         res.status(200).json({
             numberOfPublicationsRendered: numberOfPublicationsRendered,

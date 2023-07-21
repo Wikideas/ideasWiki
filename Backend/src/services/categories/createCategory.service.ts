@@ -1,7 +1,7 @@
 import Category from '../../models/category.model';
 import { collectionsNumber } from '../../utils/countCollections';
 
-export const createCategoryService = async (namecategory: string) => {
+export const createCategoryService = async (namecategory: string, shipImage: string, bannerImage: string) => {
     const numberCategory = await collectionsNumber(Category);
     try {
         const existCategory = await Category.findOne({ nameCategory: namecategory })
@@ -14,6 +14,8 @@ export const createCategoryService = async (namecategory: string) => {
     const categoryToInsert = new Category({
         categoryId: Number(numberCategory) + 1,
         nameCategory: namecategory,
+        shipImage: shipImage,
+        bannerImage: bannerImage,
         active: true
     })
     try {

@@ -10,13 +10,14 @@ import { useApi } from "../hooks/useApi";
 import LoaderDisenio from "./Loader/LoaderDisenio";
 import Loader from "./Loader/Loader";
 import { backendImage, datascienceImage, developerImage, diseñouxuiImage, frontendImage, programasIAImage, QAtestingmanualImage } from "../styles/assets/categoriesImg";
+import { useId } from "react";
 
 const Carousel = () => {
 
   /* llamado de API */
   const { loading, data: category } = useApi(`https://serviceone.onrender.com/api-wikideas/categories`)
   console.log(loading)
-  console.log(category)
+  console.log('category', category)
 
   // Objeto que mapea nombres de categoría con las imágenes correspondientes
   const categoryImages = {
@@ -29,10 +30,14 @@ const Carousel = () => {
     7: QAtestingmanualImage,
   };
 
+  const id = useId()
+
 
 
   return (
     <div className="contenedor-carousel">
+
+   <div className="title-cat">Categorias</div>
 
 {
             loading ? (
@@ -47,12 +52,14 @@ const Carousel = () => {
           dragConstraints={{ right: 0, left: -177 }}
         >
           {/* contenedor div para las category */}
-
+         
           
-          {category.map((categorias) => {
+          {category.map((categorias, index) => {
+           
+
             return (
 
-              <motion.div className="cont-item">
+              <motion.div className="cont-item" key={categorias._id}>
                 <img
                   src={categoryImages[categorias.categoryId]}
                   alt={categorias.nameCategory}

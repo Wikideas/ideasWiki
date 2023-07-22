@@ -3,6 +3,8 @@ import mongoose, { Schema, Document } from 'mongoose'
 export interface ICategory extends Document {
     categoryId: string
     nameCategory: string
+    shipImage: string
+    bannerImage: string
     active: boolean
 }
 
@@ -14,6 +16,12 @@ const categorySchema = new Schema<ICategory>({
     nameCategory: {
         type: String,
         required: true
+    },
+    shipImage: {
+        type: String
+    },
+    bannerImage: {
+        type: String
     },
     active: {
         type: Boolean

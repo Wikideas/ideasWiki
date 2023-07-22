@@ -18,7 +18,7 @@ function Categorias() {
   console.log('useParams', categoryId)
 
   const [cardCategory, setCardCategory] = useState([""]);
-  //console.log(category);
+  console.log('cardCategory', cardCategory);
 
 
   //Funcion para llamar a la API
@@ -31,9 +31,9 @@ function Categorias() {
       const result = await axios.get(url).catch((error) => {
         console.log(error);
       });
-      console.log('idByCategory',result.data)
+      console.log('idByCategory',result.data.publications)
 
-      setCardCategory(result.data);
+      setCardCategory(result.data.publications);
     };
     obtenerCardCategory();
   }, [categoryId]);
@@ -50,7 +50,7 @@ function Categorias() {
       {/* Aquí se renderizan las cards horizontales */}
       <div className='categorias-container__cards'>
       {cardCategory.map(card => (
-        <div className='categorias-card' key={card.categoryId}>
+        <div className='categorias-card' key={card.indexOf}>
           <img src={card.imagen} alt={card.Topic} />
           <Link to={`/articulos/${card.detail}`} onClick={() => handleTitleClick(card.topic)}>
           Título: {card.topic}

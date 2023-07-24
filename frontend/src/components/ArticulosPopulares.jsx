@@ -87,11 +87,9 @@ const ArticulosPopulares = () => {
 
       // Actualizar el estado con todos los datos completos de las publicaciones
       setData(publicationsWithDetail);
-
       setErrorMessage('');
     };
-    /* `obtenerDatos();` is a function call that is being executed inside the `useEffect` hook. It is
-    responsible for fetching data from an API and updating the state with the retrieved data. */
+
     obtenerDatos();
   }, []);
   
@@ -150,7 +148,6 @@ const ArticulosPopulares = () => {
 
           {data.map((publication, index) => (
             <motion.div className="cardContainer" key={index}> {/* Estilos de cada Card*/}
-            {console.log('publication', publication)}
                 {/* Imagen */}
                 {publication.detailData && publication.detailData[0] && publication.detailData[0].imagesData ?  (
                 <>
@@ -185,11 +182,5 @@ const ArticulosPopulares = () => {
 };
 
 export default ArticulosPopulares;
-                  
-
-        
-
-
-    
 
 

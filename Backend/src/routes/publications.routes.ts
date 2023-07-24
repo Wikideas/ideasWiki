@@ -20,9 +20,9 @@ router.get('/publications', getPublicationsController);
 router.get('/last-publication', getLastPublicationController);
 router.get('/suggested-publications/:numberSuggestedPublicationsIn', getSuggestedPublicationsController);
 router.get('/publications-by-string/:string', getPublicationsByStringController);
-router.get('/publication-by-id-publication/:publicationId', getPublicationByIdController);
+router.get('/publication-by-publicationId/:publicationId', getPublicationByIdController);
 router.get('/publication-by-topic/:topic', getPublicationByTopicController);
-router.get('/publications-by-id-category/:categoryId', getPublicationsByIdCategoryController);
+router.get('/publications-by-categoryId/:categoryId', getPublicationsByIdCategoryController);
 router.post('/publications', createPublicationController);
 router.put('/publications/:publicationId', checking, editPublicationController);
 

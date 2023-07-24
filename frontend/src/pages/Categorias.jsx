@@ -26,7 +26,7 @@ function Categorias() {
     //llamado asincronico de la API
 
     const obtenerCardCategory = async () => {
-      const url = `https://serviceone.onrender.com/api-wikideas/publications-by-id-category/${categoryId}`;
+      const url = `https://serviceone.onrender.com/api-wikideas/publications-by-categoryId/${categoryId}`;
       console.log("url", url);
       const result = await axios.get(url).catch((error) => {
         console.log(error);

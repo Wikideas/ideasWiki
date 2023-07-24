@@ -23,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 5rem auto;
+  margin: 5rem 0 0 auto;
 }
 .categorias-card {
   display: grid;

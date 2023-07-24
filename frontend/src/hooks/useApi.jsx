@@ -6,7 +6,7 @@ export const useApi = (urlLink) => {
 
     const [data, setData] = useState([""]);
     const [loading, setLoading] = useState(true);
-    console.log(data)
+    // console.log(data)
     
     useEffect(() => {
         setLoading(true)
@@ -17,11 +17,11 @@ export const useApi = (urlLink) => {
           const result = await axios.get(url).catch((error) => {
             console.log(error);
           });
-          console.log(result)
+          // console.log(result)
          /*  console.log(result.data.data[0].nameCategory); */
     
           setData(result.data.categories); 
-           console.log(result)
+          //  console.log(result)
           setLoading(false)
         };
         obtenerCategory();

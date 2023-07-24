@@ -6,7 +6,6 @@ export const TitleContext = createContext();
 export const TitleProvider = ( { children } ) => {
 
     const [selectedTitle, setSelectedTitle] = useState('');
-    console.log('contextTitle', selectedTitle)
 
     return (
        <TitleContext.Provider value={{ 

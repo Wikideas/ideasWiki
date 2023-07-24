@@ -6,11 +6,14 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ItemListArticulos from '../Articulos/ItemListArticulos';
 import { TitleContext } from '../../context/TitleContext';
+import { useTheme } from '../../context/ThemeProvider';
 
 
 
 
 const ItemListIdArt = () => {
+
+  const { theme } = useTheme();
 
   const { selectedTitle } = useContext(TitleContext)
   console.log('topic', selectedTitle)
@@ -36,7 +39,7 @@ const ItemListIdArt = () => {
               axios.get(`https://serviceone.onrender.com/api-wikideas/sections/${sectionId}`)
             );
               console.log('sectionPromises', sectionPromises)
-             
+            
             //se espera a que se resuelvan las promesas y devuelve la respuesta o "result"
             const responses = await Promise.all(sectionPromises);
               console.log('responses', responses)
@@ -57,7 +60,7 @@ const ItemListIdArt = () => {
 
 
     return (
-        <div>
+        <div id={theme}>
 
              <div className="tituloArticulo">
                 <h2 id="123">{selectedTitle}</h2>
